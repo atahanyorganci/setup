@@ -2,3 +2,5 @@
 !README.md
 !LICENSE.md
 !.gitignore
+!fish
+!fish/**
