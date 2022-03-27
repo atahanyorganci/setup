@@ -12,3 +12,5 @@
 !zsh/**
 !ipython
 !ipython/**
+!python
+!python/**
