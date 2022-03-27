@@ -8,3 +8,5 @@
 !alacritty/**
 !git
 !git/**
+!zsh
+!zsh/**
