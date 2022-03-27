@@ -10,3 +10,5 @@
 !git/**
 !zsh
 !zsh/**
+!ipython
+!ipython/**
