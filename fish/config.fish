@@ -6,6 +6,18 @@ function gc --wraps "git commit" --description "Git Commit - Record changes to t
     command git commit $argv
 end
 
+function gcm --wraps "git commit -m" --description "Git Commit Message - Record changes to the repository"
+    command git commit -m $argv
+end
+
+function gr --wraps "git rebase" --description "Git Rebase - Reapply commits on top of another base tip"
+    command git rebase $argv
+end
+
+function gri --wraps "git rebase -i" --description "Git Rebase Interactive - Reapply commits on top of another base tip"
+    command git rebase -i $argv
+end
+
 function ga --wraps "git add" --description "Git Add - Add file contents to the index"
     if test (count $argv) -gt 0
         command git add $argv
