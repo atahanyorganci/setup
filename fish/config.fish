@@ -135,3 +135,7 @@ set -Ux PANDOC_DATA_DIR (pandoc -v | grep data | awk -F: '{ gsub(/ /,""); print 
 # Volta Node.js Version Manager
 set -Ux VOLTA_HOME "$XDG_DATA_HOME/volta"
 fish_add_path "$VOLTA_HOME/bin" $PATH
+
+# Fly.io CLI
+set -Ux FLY_INSTALL "$XDG_DATA_HOME/fly"
+fish_add_path "$FLY_INSTALL/bin" $PATH
