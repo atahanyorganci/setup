@@ -3,6 +3,7 @@
 [user]
 	email = atahanyorganci@hotmail.com
 	name = Atahan Yorgancı
+	signingkey = F3F2B2EDB7562F09
 [core]
 	editor = code --wait
 [credential "https://github.com"]
@@ -11,3 +12,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[commit]
+	gpgsign = true
