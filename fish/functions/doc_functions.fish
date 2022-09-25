@@ -1,5 +1,5 @@
 function doc_functions -d "Generate markdown documentation for all user-defined functions"
-    set -f file_functions (git ls-tree -r main --name-only | grep "fish/functions" | sed "s/fish\/functions\///" | sed "s/.fish//")
+    set -f file_functions (ls -1 $__fish_config_dir/functions/ | sed "s/.fish//")
     printf "# Functions\n\n"
     for fn in (functions)
         set -l is_file (contains $fn $file_functions && echo "true" || echo "false")
