@@ -6,9 +6,15 @@
 - `doc_functions`: Generate markdown documentation for all user-defined functions
 - `explorer`: Windows Explorer
 - `fish_title`: Set terminal title
+- `fisher`: A plugin manager for Fish
+- `fzf_configure_bindings`: Installs the default key bindings for fzf.fish with user overrides passed as options.
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gc` (`git commit`): Git Commit - Record changes to the repository
+- `gcm` (`git commit -m`): Git Commit Message - Record changes to the repository
+- `gitignore` (`bat $repo/{} -l gitignore `): Choose and copy .gitignore from github/gitignore
 - `gl` (`git log`): Git Log - Show commit logs
+- `gr` (`git rebase`): Git Rebase - Reapply commits on top of another base tip
+- `gri` (`git rebase -i`): Git Rebase Interactive - Reapply commits on top of another base tip
 - `gs`: Pretty-print git status
 - `lb`: Compile .tex file to PDF
 - `lbc`: Compile .tex file to PDF and clean TeX auxiliary files
@@ -20,8 +26,6 @@
 - `pandoc_add`: Install pandoc template
 - `pandoc_list`: List installed pandoc templates
 - `pandoc_remove`: Uninstall pandoc template
-- `quick_ignore`: Choose and copy .gitignore from github/gitignore
-- `quick_proj`: Quick project wizard
 - `save`: Save function to functions directory and update .gitignore
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
 - `take`: Create a new directory and cd into it
