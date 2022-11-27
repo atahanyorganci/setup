@@ -34,6 +34,14 @@ function gl --wraps "git log" --description "Git Log - Show commit logs"
     end
 end
 
+function gsl --wraps "git stash list" --description "Git Stash List - List stashed changesets"
+    command git stash list $argv
+end
+
+function gbl --wraps "git branch -lv" --description "Git Branch List - List branches"
+    command git branch -lv $argv
+end
+
 function lb --description "Compile .tex file to PDF"
     command latexmk -Werror -pdf -halt-on-error $argv
 end
