@@ -9,6 +9,7 @@
 - `fisher`: A plugin manager for Fish
 - `fzf_configure_bindings`: Installs the default key bindings for fzf.fish with user overrides passed as options.
 - `ga` (`git add`): Git Add - Add file contents to the index
+- `gbl` (`git branch -lv`): Git Branch List - List branches
 - `gc` (`git commit`): Git Commit - Record changes to the repository
 - `gcm` (`git commit -m`): Git Commit Message - Record changes to the repository
 - `gitignore` (`bat $repo/{} -l gitignore `): Choose and copy .gitignore from github/gitignore
@@ -16,12 +17,11 @@
 - `gr` (`git rebase`): Git Rebase - Reapply commits on top of another base tip
 - `gri` (`git rebase -i`): Git Rebase Interactive - Reapply commits on top of another base tip
 - `gs`: Pretty-print git status
+- `gsl` (`git stash list`): Git Stash List - List stashed changesets
 - `lb`: Compile .tex file to PDF
 - `lbc`: Compile .tex file to PDF and clean TeX auxiliary files
 - `lc`: Clean TeX auxiliary files
 - `ll`: List files in current directory
-- `open`: Open a file with default app based on mime type
-- `openi`: Open a file by choosing interactively
 - `os`: Get OS name (WSL/Darwin/Linux)
 - `pandoc_add`: Install pandoc template
 - `pandoc_list`: List installed pandoc templates
