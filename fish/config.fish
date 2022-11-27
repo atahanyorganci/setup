@@ -42,6 +42,14 @@ function gbl --wraps "git branch -lv" --description "Git Branch List - List bran
     command git branch -lv $argv
 end
 
+function open --wraps xdg-open --description "Open - Open file or folder"
+    if test (count $argv) -gt 0
+        command xdg-open $argv
+    else
+        command xdg-open .
+    end
+end
+
 function lb --description "Compile .tex file to PDF"
     command latexmk -Werror -pdf -halt-on-error $argv
 end
