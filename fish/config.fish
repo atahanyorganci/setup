@@ -84,6 +84,14 @@ function fish_title --description "Set terminal title"
     end
 end
 
+function c --description "Visiual Studio Code" --wraps code
+    if test (count $argv) -gt 0
+        command code $argv
+    else
+        command code .
+    end
+end
+
 set -U OS (os)
 
 # XDG Base Directory Specification
