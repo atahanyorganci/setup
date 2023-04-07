@@ -1,8 +1,10 @@
 # Functions
 
+- `c`: Visiual Studio Code
 - `cdi`: Interactively change directory
 - `configure`: Open configuration for with default editor
 - `confirm`: Prompt user for confirmation (yes/no)
+- `copy`: Copy piped STDIN or arguments into clipboard
 - `doc_functions`: Generate markdown documentation for all user-defined functions
 - `explorer`: Windows Explorer
 - `fish_title`: Set terminal title
@@ -22,10 +24,12 @@
 - `lbc`: Compile .tex file to PDF and clean TeX auxiliary files
 - `lc`: Clean TeX auxiliary files
 - `ll`: List files in current directory
+- `open`: Open - Open file or folder
 - `os`: Get OS name (WSL/Darwin/Linux)
 - `pandoc_add`: Install pandoc template
 - `pandoc_list`: List installed pandoc templates
 - `pandoc_remove`: Uninstall pandoc template
+- `paste`: Echo clipboard to STDOUT
 - `save`: Save function to functions directory and update .gitignore
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
 - `take`: Create a new directory and cd into it

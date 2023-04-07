@@ -29,3 +29,5 @@
 !pandoc_list.fish
 !pandoc_remove.fish
 !_pandoc_remove_offer.fish
+!copy.fish
+!paste.fish
