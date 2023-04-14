@@ -1,10 +1,15 @@
 function doc_functions -d "Generate markdown documentation for all user-defined functions"
-    set -f file_functions (ls -1 $__fish_config_dir/functions/ | sed "s/.fish//")
+    if test (pwd) != $__fish_config_dir
+        echo "You should be in '$__fish_config_dir' to run this command"
+        return 1
+    end
     printf "# Functions\n\n"
     for fn in (functions)
-        set -l is_file (contains $fn $file_functions && echo "true" || echo "false")
-        set -l path (functions -D $fn)
-        if test $is_file != true -a $path != "$__fish_config_dir/config.fish"
+        set -l fn_path (functions -D $fn)
+        if not string match -q $__fish_config_dir'/*' $fn_path
+            continue
+        end
+        if git check-ignore -q $fn_path
             continue
         end
         set -l src (functions $fn)
