@@ -1,76 +1,5 @@
 #!/usr/bin/env fish
 
-set -U EDITOR code
-
-function gc --wraps "git commit" --description "Git Commit - Record changes to the repository"
-    command git commit $argv
-end
-
-function gcm --wraps "git commit -m" --description "Git Commit Message - Record changes to the repository"
-    command git commit -m $argv
-end
-
-function gr --wraps "git rebase" --description "Git Rebase - Reapply commits on top of another base tip"
-    command git rebase $argv
-end
-
-function gri --wraps "git rebase -i" --description "Git Rebase Interactive - Reapply commits on top of another base tip"
-    command git rebase -i $argv
-end
-
-function ga --wraps "git add" --description "Git Add - Add file contents to the index"
-    if test (count $argv) -gt 0
-        command git add $argv
-    else
-        command git add .
-    end
-end
-
-function gl --wraps "git log" --description "Git Log - Show commit logs"
-    if test (count $argv) -gt 0
-        command git log $argv
-    else
-        command git log --oneline --pretty=format:'%Cgreen(%cr)%Creset %Cred%h%Creset %s %C(yellow)%d%Creset'
-    end
-end
-
-function gsl --wraps "git stash list" --description "Git Stash List - List stashed changesets"
-    command git stash list $argv
-end
-
-function gbl --wraps "git branch -lv" --description "Git Branch List - List branches"
-    command git branch -lv $argv
-end
-
-function open --wraps xdg-open --description "Open - Open file or folder"
-    if test (count $argv) -gt 0
-        command xdg-open $argv
-    else
-        command xdg-open .
-    end
-end
-
-function lb --description "Compile .tex file to PDF"
-    command latexmk -Werror -pdf -halt-on-error $argv
-end
-
-function lbc --description "Compile .tex file to PDF and clean TeX auxiliary files"
-    command latexmk -Werror -pdf -halt-on-error $argv
-    command latexmk -c
-end
-
-function lc --description "Clean TeX auxiliary files"
-    command latexmk -Werror -c $argv
-end
-
-function tree --description "Show directory tree"
-    command exa --tree --git-ignore $argv
-end
-
-function ll --description "List files in current directory"
-    command exa -l --git-ignore $argv
-end
-
 function fish_title --description "Set terminal title"
     if set -q argv[1]
         set -l arg $argv[1]
@@ -92,17 +21,14 @@ function c --description "Visiual Studio Code" --wraps code
     end
 end
 
-set -U OS (os)
+set -Ux OS (os)
+set -Ux EDITOR code
 
 # XDG Base Directory Specification
 set -Ux XDG_CONFIG_HOME $HOME/.config
 set -Ux XDG_DATA_HOME $HOME/.local/share
 set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux XDG_STATE_HOME $HOME/.local/state
-
-# Add .local/bin to `PATH`
-mkdir -p "$HOME/.local/bin"
-fish_add_path "$HOME/.local/bin"
 
 # OS dependent configurations
 switch $OS
