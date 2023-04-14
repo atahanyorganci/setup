@@ -8,8 +8,6 @@
 - `doc_functions`: Generate markdown documentation for all user-defined functions
 - `explorer`: Windows Explorer
 - `fish_title`: Set terminal title
-- `fisher`: A plugin manager for Fish
-- `fzf_configure_bindings`: Installs the default key bindings for fzf.fish with user overrides passed as options.
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gbl` (`git branch -lv`): Git Branch List - List branches
 - `gc` (`git commit`): Git Commit - Record changes to the repository
