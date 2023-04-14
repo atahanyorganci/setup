@@ -42,20 +42,20 @@ switch $OS
         fish_add_path "$WIN_ROOT/Program Files/Microsoft VS Code/bin"
 end
 
-# Configure CARGO_HOME, RUSTUP_HOME and add cargo binaries to PATH
+# Add .local/bin to `PATH`
+mkdir -p "$HOME/.local/bin"
+fish_add_path "$HOME/.local/bin"
+
+# Export `CARGO_HOME` and `RUSTUP_HOME`
 set -Ux CARGO_HOME $XDG_DATA_HOME/cargo
 set -Ux RUSTUP_HOME $XDG_DATA_HOME/rustup
+
+# Add binaries installed by `cargo` to `PATH`
 fish_add_path $CARGO_HOME/bin
 
 # Set fish prompt and greeting
 eval (starship init fish)
 set fish_greeting
-
-# Created by `pipx`
-fish_add_path $HOME/.local/bin
-
-# Add `SCRIPTLY_ROOT` variable for `scriptly`
-set -Ux SCRIPTLY_ROOT $HOME/Development/tools
 
 # Optout of the .NET telementry
 set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
