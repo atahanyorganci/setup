@@ -49,7 +49,7 @@ function gitignore --description 'Choose and copy .gitignore from github/gitigno
         set -f dest ".gitignore"
     end
 
-    set -l list (ll $repo/*.gitignore | awk '{ n = split($7, a, "/"); print a[n]; }')
+    set -l list (ls -1 $repo | sd '(.*).gitignore' '$1')
     if test -n "$_flag_list"
         echo "Available gitignore files:"
         printf "%s\n" $list
@@ -59,12 +59,12 @@ function gitignore --description 'Choose and copy .gitignore from github/gitigno
         else
             set -f file ""
         end
-        set -l ignore (printf "%s\n" $list | fzf --query="$file" --preview="bat $repo/{} -l gitignore ")
+        set -l ignore (printf "%s\n" $list | fzf --query="$file" --preview="bat $repo/{}.gitignore -l gitignore ")
         echo "Copying '$ignore' to $dest"
         if test -z "$ignore"
             return 1
         else
-            cp $repo/$ignore $dest
+            cp $repo/$ignore.gitignore $dest
         end
     end
 end
