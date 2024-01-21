@@ -1,4 +1,4 @@
-function copy --description 'Copy piped STDIN or arguments into clipboard'
+function copy --description 'Copy piped STDIN or arguments into the clipboard'
     if test (count $argv) = 0
         command xclip
     else

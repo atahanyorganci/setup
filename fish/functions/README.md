@@ -2,9 +2,9 @@
 
 - `c`: Visiual Studio Code
 - `cdi`: Interactively change directory
-- `configure`: Open configuration for with default editor
+- `configure`: Open configuration with the default editor
 - `confirm`: Prompt user for confirmation (yes/no)
-- `copy`: Copy piped STDIN or arguments into clipboard
+- `copy`: Copy piped STDIN or arguments into the clipboard
 - `doc_functions`: Generate markdown documentation for all user-defined functions
 - `explorer`: Windows Explorer
 - `fish_title`: Set terminal title
@@ -24,4 +24,4 @@
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
 - `take`: Create a new directory and cd into it
 - `unsplash`: Download random images from Unsplash
-- `unstage` (`git reset`): Unstage files from stage
+- `unstage` (`git reset`): Unstage changes from the index
