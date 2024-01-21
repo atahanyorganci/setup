@@ -25,3 +25,4 @@
 - `take`: Create a new directory and cd into it
 - `unsplash`: Download random images from Unsplash
 - `unstage` (`git reset`): Unstage changes from the index
+- `wifi-pass`: Show wifi password
