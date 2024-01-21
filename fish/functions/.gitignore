@@ -1,11 +1,6 @@
 *
 !.gitignore
 !README.md
-# Windows interaction scripts
-!_win_offer.fish
-!_win_cp_impl.fish
-!win_cp.fish
-!win_chmod.fish
 # General Purpose
 !configure.fish
 !take.fish
@@ -25,9 +20,5 @@
 !doc_functions.fish
 !_task_should_offer.fish
 !_task_offer.fish
-!pandoc_add.fish
-!pandoc_list.fish
-!pandoc_remove.fish
-!_pandoc_remove_offer.fish
 !copy.fish
 !paste.fish
