@@ -4,9 +4,7 @@
 - `cdi`: Interactively change directory
 - `configure`: Open configuration with the default editor
 - `confirm`: Prompt user for confirmation (yes/no)
-- `copy`: Copy piped STDIN or arguments into the clipboard
-- `doc_functions`: Generate markdown documentation for all user-defined functions
-- `explorer`: Windows Explorer
+- `doc-functions`: Generate markdown documentation for all user-defined functions
 - `fish_title`: Set terminal title
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gbl` (`git branch -lv`): Git Branch List - List branches
@@ -18,8 +16,6 @@
 - `gri` (`git rebase -i`): Git Rebase Interactive - Reapply commits on top of another base tip
 - `gs`: Pretty-print git status
 - `gsl` (`git stash list`): Git Stash List - List stashed changesets
-- `os`: Get OS name (WSL/Darwin/Linux)
-- `paste`: Echo clipboard to STDOUT
 - `save`: Save function to functions directory and update .gitignore
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
 - `take`: Create a new directory and cd into it

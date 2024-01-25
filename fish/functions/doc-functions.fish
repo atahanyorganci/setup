@@ -1,4 +1,4 @@
-function doc_functions -d "Generate markdown documentation for all user-defined functions"
+function doc-functions -d "Generate markdown documentation for all user-defined functions"
     if test (pwd) != $__fish_config_dir
         echo "You should be in '$__fish_config_dir' to run this command"
         return 1

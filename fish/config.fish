@@ -21,7 +21,6 @@ function c --description "Visiual Studio Code" --wraps code
     end
 end
 
-set -Ux OS (os)
 set -Ux EDITOR code
 
 # XDG Base Directory Specification
@@ -89,3 +88,7 @@ fish_add_path "$VOLTA_HOME/bin" $PATH
 # Fly.io CLI
 set -Ux FLY_INSTALL "$XDG_DATA_HOME/fly"
 fish_add_path "$FLY_INSTALL/bin" $PATH
+
+# Bun
+set -Ux BUN_INSTALL "$XDG_DATA_HOME/bun"
+fish_add_path "$BUN_INSTALL/bin" $PATH
