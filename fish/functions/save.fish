@@ -7,6 +7,6 @@ function save -w funcsave -d "Save function to functions directory and update .g
         funcsave $arg
         fish_indent -w $path
         set -l path (realpath --relative-to $HOME $path)
-        echo "Saved `$arg` to '~/$path'"
+        gum log --level info "Saved `$arg` to '~/$path'"
     end
 end
