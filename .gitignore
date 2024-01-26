@@ -18,3 +18,5 @@
 !kitty
 !kitty/**
 !starship.toml
+!installers
+!installers/**
