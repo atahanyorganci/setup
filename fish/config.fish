@@ -49,9 +49,6 @@ fish_add_path "$HOME/.local/bin"
 set -Ux CARGO_HOME $XDG_DATA_HOME/cargo
 set -Ux RUSTUP_HOME $XDG_DATA_HOME/rustup
 
-# Add binaries installed by `cargo` to `PATH`
-fish_add_path $CARGO_HOME/bin
-
 # Set fish prompt and greeting
 eval (starship init fish)
 set fish_greeting
@@ -62,10 +59,6 @@ set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
 # Configure `fzf.fish` keybindings
 fzf_configure_bindings
 fzf_configure_bindings --git_log=\cg
-
-# Set GOPATH
-set -Ux GOPATH $XDG_DATA_HOME/go
-fish_add_path $GOPATH/bin
 
 # Move `.node_repl_history` to `XDG_STATE_HOME`
 set -Ux NODE_REPL_HISTORY $XDG_STATE_HOME/node_repl_history
@@ -81,17 +74,9 @@ set -l KITTY_CACHE_DIRECTORY $XDG_CACHE_HOME/kitty
 # User data dir for pandoc contains templates
 set -Ux PANDOC_DATA_DIR (pandoc -v | grep data | awk -F: '{ gsub(/ /,""); print $2; }')
 
-# Volta Node.js Version Manager
-set -Ux VOLTA_HOME "$XDG_DATA_HOME/volta"
-fish_add_path "$VOLTA_HOME/bin" $PATH
-
 # Fly.io CLI
 set -Ux FLY_INSTALL "$XDG_DATA_HOME/fly"
 fish_add_path "$FLY_INSTALL/bin" $PATH
-
-# Bun
-set -Ux BUN_INSTALL "$XDG_DATA_HOME/bun"
-fish_add_path "$BUN_INSTALL/bin" $PATH
 
 # `mise` development tool manager
 mise activate fish | source
