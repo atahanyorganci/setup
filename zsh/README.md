@@ -9,7 +9,6 @@
 - if it is a **command to be run when the shell is fully setup**: `.zlogin`
 - if it **releases a resource** acquired at login: `.zlogout`
 
-Taken from this [question][howto] from [Stack Exchange](https://unix.stackexchange.com/).
-
+Inspired by this [question and answer][howto] on [Unix Stack Exchange](https://unix.stackexchange.com/).
 
 [howto]: https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout
