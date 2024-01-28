@@ -92,3 +92,6 @@ fish_add_path "$FLY_INSTALL/bin" $PATH
 # Bun
 set -Ux BUN_INSTALL "$XDG_DATA_HOME/bun"
 fish_add_path "$BUN_INSTALL/bin" $PATH
+
+# `mise` development tool manager
+mise activate fish | source
