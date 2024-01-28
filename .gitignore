@@ -20,3 +20,5 @@
 !starship.toml
 !installers
 !installers/**
+!mise
+!mise/**

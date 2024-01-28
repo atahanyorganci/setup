@@ -1,0 +1,41 @@
+[tools]
+go = "1.21"
+bun = "1"
+node = "20"
+
+# `asdf` & `mise` plugins
+poetry = "latest"
+pipx = "latest"
+awscli = "latest"
+task = "latest"
+dive = "latest"
+fzf = "latest"
+
+# `npm` packages
+"npm:pnpm" = "latest"
+"npm:vercel" = "latest"
+
+# `cargo` crates
+"cargo:coreutils" = "latest"
+"cargo:exa" = "latest"
+"cargo:git-delta" = "latest"
+"cargo:bat" = "latest"
+"cargo:just" = "latest"
+"cargo:sd" = "latest"
+"cargo:fd-find" = "latest"
+"cargo:du-dust" = "latest"
+"cargo:hyperfine" = "latest"
+
+# `go` packages
+"go:github.com/charmbracelet/gum" = "latest"
+
+[plugins]
+poetry = "https://github.com/mise-plugins/mise-poetry"
+pipx = "https://github.com/yozachar/asdf-pipx"
+awscli = "https://github.com/MetricMike/asdf-awscli"
+task = "https://github.com/particledecay/asdf-task"
+dive = "https://github.com/looztra/asdf-dive"
+fzf = "https://github.com/kompiro/asdf-fzf"
+
+[settings]
+experimental = true
