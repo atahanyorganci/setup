@@ -2,6 +2,7 @@
 
 - `c`: Visiual Studio Code
 - `cdi`: Interactively change directory
+- `clone`: Clone git repository into development dir
 - `configure`: Open configuration with the default editor
 - `confirm`: Prompt user for confirmation (yes/no)
 - `doc-functions`: Generate markdown documentation for all user-defined functions

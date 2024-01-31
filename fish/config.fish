@@ -22,6 +22,7 @@ function c --description "Visiual Studio Code" --wraps code
 end
 
 set -Ux EDITOR code
+set -Ux DEV_HOME $HOME/Documents
 
 # XDG Base Directory Specification
 set -Ux XDG_CONFIG_HOME $HOME/.config
