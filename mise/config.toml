@@ -10,6 +10,7 @@ awscli = "latest"
 task = "latest"
 dive = "latest"
 fzf = "latest"
+watchexec = "latest"
 
 # `npm` packages
 "npm:pnpm" = "latest"
@@ -36,6 +37,7 @@ awscli = "https://github.com/MetricMike/asdf-awscli"
 task = "https://github.com/particledecay/asdf-task"
 dive = "https://github.com/looztra/asdf-dive"
 fzf = "https://github.com/kompiro/asdf-fzf"
+watchexec = "https://github.com/nyrst/asdf-watchexec"
 
 [settings]
 experimental = true
