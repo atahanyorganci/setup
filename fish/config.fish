@@ -48,6 +48,7 @@ fish_add_path "$HOME/.local/bin"
 # Export `CARGO_HOME` and `RUSTUP_HOME`
 set -Ux CARGO_HOME $XDG_DATA_HOME/cargo
 set -Ux RUSTUP_HOME $XDG_DATA_HOME/rustup
+fish_add_path "$CARGO_HOME/bin"
 
 # Set fish prompt and greeting
 eval (starship init fish)
