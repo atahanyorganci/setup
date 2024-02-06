@@ -4,9 +4,9 @@ function save -w funcsave -d "Save function to functions directory and update .g
     for arg in $argv
         set -l path "$functions/$arg.fish"
         echo "!$arg.fish" >>$ignore
-        funcsave $arg
+        funcsave --quiet $arg
         fish_indent -w $path
         set -l path (realpath --relative-to $HOME $path)
-        gum log --level info "Saved `$arg` to '~/$path'"
+        info "Saved `$arg` to '~/$path'"
     end
 end

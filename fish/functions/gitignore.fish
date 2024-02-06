@@ -7,38 +7,38 @@ function gitignore --description 'Choose and copy .gitignore from github/gitigno
 
     # Initialize `gitignore` by cloning github/gitignore to $HOME/.local/share/gitignore
     if test -n "$_flag_init"
-        gum log --level info "Downloading `github/gitignore` to $repo"
+        info "Downloading `github/gitignore` to $repo"
         mkdir -p $repo && git clone "https://github.com/github/gitignore" $repo >/dev/null 2>&1
         if test $status -eq 0
-            gum log --level info "DONE!"
+            info "DONE!"
             return
         else
-            gum log --level error "FAILED!"
-            gum log --level error (gum format "Run `gitignore --init` to try again")
+            error "FAILED!"
+            error (gum format "Run `gitignore --init` to try again")
             return 1
         end
     end
 
     # If $HOME/.local/share/gitignore isn't a directory, exit with error
     if test ! -d $repo
-        gum log --level error "Repository github/gitignore not found in $repo"
-        gum log --level error "Run gitignore --init to download it"
+        error "Repository github/gitignore not found in $repo"
+        error "Run gitignore --init to download it"
         return 1
     end
 
     # Update `gitignore` by pulling latest changes from github/gitignore
     if test -n "$_flag_update"
-        gum log --level info "Updating `github/gitignore` in $repo"
+        info "Updating `github/gitignore` in $repo"
         set -l last $PWD
         cd $repo && git pull >/dev/null 2>&1
         set -l pull $status
         cd $last
         if test $pull -eq 0
-            gum log --level info "DONE!"
+            info "DONE!"
             return
         else
-            gum log --level error "FAILED!"
-            gum log --level error "Run `gitignore --update` to try again"
+            error "FAILED!"
+            error "Run `gitignore --update` to try again"
             return 1
         end
     end
@@ -64,6 +64,6 @@ function gitignore --description 'Choose and copy .gitignore from github/gitigno
         else
             cp $repo/$ignore.gitignore $dest
         end
-        gum log --level info "Copied '$ignore' to $dest"
+        info "Copied '$ignore' to $dest"
     end
 end
