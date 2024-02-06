@@ -64,6 +64,6 @@ function gitignore --description 'Choose and copy .gitignore from github/gitigno
         else
             cp $repo/$ignore.gitignore $dest
         end
-        info "Copied '$ignore' to $dest"
+        info "Copied $ignore ignore file to $dest"
     end
 end
