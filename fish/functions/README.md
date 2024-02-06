@@ -4,7 +4,6 @@
 - `cdi`: Interactively change directory
 - `clone`: Clone git repository into development dir
 - `configure`: Open configuration with the default editor
-- `confirm`: Prompt user for confirmation (yes/no)
 - `doc-functions`: Generate markdown documentation for all user-defined functions
 - `fish_title`: Set terminal title
 - `ga` (`git add`): Git Add - Add file contents to the index
