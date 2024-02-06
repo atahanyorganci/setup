@@ -4,7 +4,10 @@
 - `cdi`: Interactively change directory
 - `clone`: Clone git repository into development dir
 - `configure`: Open configuration with the default editor
+- `debug`: Log debug message
 - `doc-functions`: Generate markdown documentation for all user-defined functions
+- `error`: Log error message
+- `fatal`: Log fatal message
 - `fish_title`: Set terminal title
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gbl` (`git branch -lv`): Git Branch List - List branches
@@ -16,9 +19,12 @@
 - `gri` (`git rebase -i`): Git Rebase Interactive - Reapply commits on top of another base tip
 - `gs`: Pretty-print git status
 - `gsl` (`git stash list`): Git Stash List - List stashed changesets
+- `info`: Log info message
+- `log`: Log message using gum
 - `save`: Save function to functions directory and update .gitignore
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
 - `take`: Create a new directory and cd into it
 - `unsplash`: Download random images from Unsplash
 - `unstage` (`git reset`): Unstage changes from the index
+- `warn`: Log warning message
 - `wifi-pass`: Show wifi password
