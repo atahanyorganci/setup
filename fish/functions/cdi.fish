@@ -14,7 +14,7 @@ function cdi --description "Interactively change directory"
         set prompt cd
     end
     set -l home_escaped (string replace -a "/" "\/" $HOME)
-    set -l z_list (z -l | awk '{ print $2; }')
+    set -l z_list (zoxide query -l)
     set list "~"
     for item in $z_list
         if string match -rq "$home_escaped\/(?<rest>.*)" $item
