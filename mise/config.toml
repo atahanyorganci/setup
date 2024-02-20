@@ -26,6 +26,7 @@ watchexec = "latest"
 "cargo:fd-find" = "latest"
 "cargo:du-dust" = "latest"
 "cargo:hyperfine" = "latest"
+"cargo:zoxide" = "latest"
 
 # `go` packages
 "go:github.com/charmbracelet/gum" = "latest"
