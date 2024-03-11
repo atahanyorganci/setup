@@ -13,11 +13,11 @@ function clone --description 'Clone git repository into development dir'
 
     debug "Using $DEV_HOME as development directory"
 
-    if string match -q -r 'https?:\/\/github.com\/(?<user>\w+)\/(?<repo>\w+)(\.git)?' $argv[1]
+    if string match -q -r 'https?:\/\/github.com\/(?<user>.+)\/(?<repo>.+)(\.git)?' $argv[1]
         debug "GitHub repository detected as $user/$repo"
         __clone_github $user $repo || return $status
     else if test -n "$_flag_github"
-        if string match -q -r '(?<user>\w+)\/(?<repo>\w+)' $argv[1]
+        if string match -q -r '(?<user>.+)\/(?<repo>.+)' $argv[1]
             debug "User: $user, Repo: $repo"
             __clone_github $user $repo || return $status
         else
