@@ -81,4 +81,6 @@ set -Ux FLY_INSTALL "$XDG_DATA_HOME/fly"
 fish_add_path "$FLY_INSTALL/bin" $PATH
 
 # `mise` development tool manager
-mise activate fish | source
+if not set -q IN_NIX_SHELL
+    mise activate fish | source
+end
