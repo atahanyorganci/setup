@@ -84,3 +84,7 @@ fish_add_path "$FLY_INSTALL/bin" $PATH
 if not set -q IN_NIX_SHELL
     mise activate fish | source
 end
+
+set -Ux DOCKER_CONFIG_HOME "$XDG_CONFIG_HOME/docker"
+set -Ux WGETRC "$XDG_CONFIG_HOME/wgetrc"
+alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
