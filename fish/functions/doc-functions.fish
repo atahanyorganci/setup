@@ -1,9 +1,7 @@
 function doc-functions -d "Generate markdown documentation for all user-defined functions"
-    if test (pwd) != $__fish_config_dir
-        echo "You should be in '$__fish_config_dir' to run this command"
-        return 1
-    end
-    printf "# Functions\n\n"
+    set -l readme $__fish_config_dir/functions/README.md
+    debug "Writing functions documentation to $readme"
+    printf "# Functions\n\n" >$readme
     for fn in (functions)
         set -l fn_path (functions -D $fn)
         if not string match -q $__fish_config_dir'/*' $fn_path
