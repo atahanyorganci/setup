@@ -11,16 +11,20 @@ function doc-functions -d "Generate markdown documentation for all user-defined 
             continue
         end
         set -l src (functions $fn)
-        string match -qr '.*((description)|d)( |=)("|\')(?<desc>[^"\']*)\4.*' $src
-        string match -qr '.*((wraps)|w)( |=)("|\')(?<wrap>[^"\']*)\4.*' $src
-        echo -ne "- `$fn`"
-        if test -n "$wrap"
-            echo -ne " (`$wrap`)"
+        string match -qr '((--description)|(-d))( |=)(("|\')(?<desc>[^\'"]*)\6|(?<d>\w*))' $src
+        string match -qr '((--wraps)|(-w))( |=)(("|\')(?<wrap>[^\'"]*)\6|(?<w>\w*))' $src
+
+        echo -ne "- `$fn`" >>$readme
+        if test -n "$wrap" -o -n "$w"
+            # We don't care to concatenate the two variables here
+            # because we know that only one of them will be set
+            echo -ne " (`$wrap$w`)" >>$readme
         end
-        if test -n "$desc"
-            echo ": $desc"
+        if test -n "$desc" -o -n "$d"
+            # Same here
+            echo ": $desc$d" >>$readme
         else
-            echo
+            echo >>$readme
         end
     end
 end
