@@ -1,5 +1,6 @@
 # Functions
 
+- `bulk-slugify`: Slugify files in bulk
 - `c` (`code`): Visiual Studio Code
 - `cdi`: Interactively change directory
 - `clone`: Clone git repository into development dir
@@ -10,7 +11,6 @@
 - `fatal`: Log fatal message
 - `ffmpeg`: FFmpeg with no banner
 - `ffprobe`: FFprobe with no banner
-- `fish_title`: Set terminal title
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gbl` (`git branch -lv`): Git Branch List - List branches
 - `gc` (`git commit`): Git Commit - Record changes to the repository
@@ -22,7 +22,7 @@
 - `gs`: Pretty-print git status
 - `gsl` (`git stash list`): Git Stash List - List stashed changesets
 - `info`: Log info message
-- `ll` (`ls`): Shorthand for `exa -lh --icons`
+- `ll` (`exa`): Shorthand for `exa -lh --icons`
 - `log`: Log message using gum
 - `open`: Open file in its default application
 - `save` (`funcsave`): Save function to functions directory and update .gitignore
