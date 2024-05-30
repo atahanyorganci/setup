@@ -2,13 +2,17 @@
 # GitHub Repository: https://github.com/alacritty/alacritty
 # Full Configuration: https://alacritty.org/config-alacritty.html
 
-# Window Dimensions
 window:
+  decorations: "none"
   dimensions:
-    columns: 120
-    lines: 48
-
-# Font configuration
+    columns: 100
+    lines: 50
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 8
+    y: 8
 font:
   size: 12.0
   normal:
