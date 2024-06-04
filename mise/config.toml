@@ -29,6 +29,7 @@ gh = "latest"
 "cargo:hyperfine" = "latest"
 "cargo:zoxide" = "latest"
 "cargo:zellij" = "latest"
+"cargo:typst-cli" = "latest"
 
 # `go` packages
 "go:github.com/charmbracelet/gum" = "latest"
