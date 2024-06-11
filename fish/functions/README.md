@@ -11,6 +11,7 @@
 - `fatal`: Log fatal message
 - `ffmpeg`: FFmpeg with no banner
 - `ffprobe`: FFprobe with no banner
+- `fish_title`: Set terminal title
 - `ga` (`git add`): Git Add - Add file contents to the index
 - `gbl` (`git branch -lv`): Git Branch List - List branches
 - `gc` (`git commit`): Git Commit - Record changes to the repository
@@ -27,6 +28,7 @@
 - `open`: Open file in its default application
 - `save` (`funcsave`): Save function to functions directory and update .gitignore
 - `show` (`git show`): Git Show - Show various types of objects and defaults to summary
+- `stash`: Stash changes in Git repository
 - `take`: Create a new directory and cd into it
 - `unsplash`: Download random images from Unsplash
 - `unstage` (`git reset`): Unstage changes from the index
