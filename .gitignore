@@ -22,3 +22,5 @@
 !installers/**
 !mise
 !mise/**
+!nix
+!nix/**
