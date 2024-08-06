@@ -13,10 +13,6 @@ fzf = "latest"
 watchexec = "latest"
 gh = "latest"
 
-# `npm` packages
-"npm:pnpm" = "latest"
-"npm:vercel" = "latest"
-
 # `cargo` crates
 "cargo:coreutils" = "latest"
 "cargo:exa" = "latest"
