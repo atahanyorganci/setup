@@ -46,7 +46,7 @@ function __gs
 end
 
 function gs --description "Pretty-print git status"
-    __gs | gawk '
+    __gs | awk '
     $2 == "|" {
         nums[$1] = $3
         diff[$1] = $4;
