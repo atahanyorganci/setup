@@ -15,8 +15,6 @@
 !python
 !python/**
 !wgetrc
-!kitty
-!kitty/**
 !starship.toml
 !installers
 !installers/**

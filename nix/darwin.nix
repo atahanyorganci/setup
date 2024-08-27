@@ -32,7 +32,6 @@ inputs@{ pkgs, user, ... }: {
     "google-chrome"
     "visual-studio-code"
     "alacritty"
-    "kitty"
   ];
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
