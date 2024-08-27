@@ -3,37 +3,16 @@
   home.stateVersion = "24.05";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # Kitty
-  programs.kitty = lib.mkForce {
+  # Import modules
+  imports = [ ./modules/kitty.nix ];
+  kitty = {
     enable = true;
-    font.size = 12;
     font.name = "Cascadia Code NF";
-    theme = "Dracula";
-    settings = {
-      remember_window_size = false;
-      initial_window_width = 900;
-      initial_window_height = 800;
-    };
-    keybindings = {
-      "ctrl+t" = "new_tab";
-      "ctrl+w" = "close_tab";
-      "ctrl+shift+1" = "goto_tab 1";
-      "ctrl+shift+2" = "goto_tab 2";
-      "ctrl+shift+3" = "goto_tab 3";
-      "ctrl+shift+4" = "goto_tab 4";
-      "ctrl+shift+5" = "goto_tab 5";
-      "ctrl+shift+6" = "goto_tab 6";
-      "ctrl+shift+7" = "goto_tab 7";
-      "ctrl+shift+8" = "goto_tab 8";
-      "ctrl+shift+9" = "goto_tab 9";
-    };
   };
   # User pacakges
   home.packages = with pkgs;
     [
-      # # Adds the 'hello' command to your environment. It prints a friendly
-      # # "Hello, world!" when run.
-      hello
+      qrencode
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
