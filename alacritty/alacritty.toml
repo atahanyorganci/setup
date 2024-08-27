@@ -6,9 +6,9 @@ italic.family = "Cascadia Code NF"
 normal.family = "Cascadia Code NF"
 
 [window]
-decorations = "Buttonless"
+decorations = "Full"
 dimensions = { columns = 100, lines = 50 }
-padding = { x = 8, y = 32 }
+padding = { x = 8, y = 8 }
 position = { x = 32, y = 32 }
 
 [colors.bright]
