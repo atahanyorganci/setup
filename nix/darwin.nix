@@ -1,4 +1,4 @@
-inputs@{ pkgs, ... }: {
+inputs@{ pkgs, user, ... }: {
   documentation.enable = false;
   # Packages from `nixpkgs` to be installed on the system.
   environment.systemPackages = with pkgs; [
@@ -56,9 +56,10 @@ inputs@{ pkgs, ... }: {
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
   # Users
-  users.users.atahan = {
-    name = "atahan";
-    description = "Atahan Yorgancı";
-    home = "/Users/atahan";
+  users.users.${user.name} = {
+    name = user.name;
+    description = user.fullName;
+    home = "/Users/${user.name}";
+    shell = pkgs.${user.shell};
   };
 }
