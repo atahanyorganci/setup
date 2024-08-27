@@ -32,6 +32,8 @@ inputs@{ pkgs, user, ... }: {
     "google-chrome"
     "visual-studio-code"
     "alacritty"
+    "raycast"
+    "orbstack"
   ];
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
