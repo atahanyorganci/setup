@@ -55,6 +55,10 @@ inputs@{ pkgs, ... }: {
     inputs.self.rev or inputs.self.dirtyRev or null;
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
-  # CPU architecture for the system.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  # Users
+  users.users.atahan = {
+    name = "atahan";
+    description = "Atahan Yorgancı";
+    home = "/Users/atahan";
+  };
 }
