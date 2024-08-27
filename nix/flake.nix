@@ -7,14 +7,22 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       user = {
         name = "atahan";
         fullName = "Atahan Yorgancı";
         shell = "fish";
       };
-    in {
+    in
+    {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Atahan-MacBook-Pro
       darwinConfigurations."Atahan-MacBook-Pro" = nix-darwin.lib.darwinSystem {
@@ -30,7 +38,9 @@
             home-manager.users.${user.name} = ./home.nix;
           }
         ];
-        specialArgs = { inherit user inputs; };
+        specialArgs = {
+          inherit user inputs;
+        };
       };
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations."Atahan-MacBook-Pro".pkgs;

@@ -1,4 +1,5 @@
-inputs@{ pkgs, user, ... }: {
+inputs@{ pkgs, user, ... }:
+{
   documentation.enable = false;
   # Packages from `nixpkgs` to be installed on the system.
   environment.systemPackages = with pkgs; [
@@ -41,10 +42,12 @@ inputs@{ pkgs, user, ... }: {
   nix.settings.experimental-features = "nix-command flakes";
   # Run garbage collection automatically every Sunday at 2am.
   nix.gc.automatic = true;
-  nix.gc.interval = [{
-    Hour = 2;
-    Weekday = 0;
-  }];
+  nix.gc.interval = [
+    {
+      Hour = 2;
+      Weekday = 0;
+    }
+  ];
   # Enable `bash`, `zsh`, and `fish` shells.
   programs.bash.enable = true;
   programs.zsh.enable = true;
@@ -52,8 +55,7 @@ inputs@{ pkgs, user, ... }: {
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
-  system.configurationRevision =
-    inputs.self.rev or inputs.self.dirtyRev or null;
+  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
   # Users
