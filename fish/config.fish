@@ -73,9 +73,6 @@ set -Ux PYTHONHISTFILE $XDG_STATE_HOME/python/history
 set -l KITTY_CONFIG_DIRECTORY $XDG_CONFIG_HOME/kitty
 set -l KITTY_CACHE_DIRECTORY $XDG_CACHE_HOME/kitty
 
-# User data dir for pandoc contains templates
-set -Ux PANDOC_DATA_DIR (pandoc -v | grep data | awk -F: '{ gsub(/ /,""); print $2; }')
-
 # Fly.io CLI
 set -Ux FLY_INSTALL "$XDG_DATA_HOME/fly"
 fish_add_path "$FLY_INSTALL/bin" $PATH
