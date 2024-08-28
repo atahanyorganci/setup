@@ -1,7 +1,12 @@
 inputs@{ pkgs, user, ... }:
+let
+  # User ID created by MacOS for the user use `id -u` to get it.
+  uid = 501;
+in
 {
   imports = [
     ../../modules/nix-darwin/homebrew.nix
+    ../../modules/nix-darwin/shell.nix
   ];
   # Disable `nix-darwin` documentation
   documentation.enable = false;
@@ -25,11 +30,13 @@ inputs@{ pkgs, user, ... }:
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
-  # Default user
+  # Users managed by Nix
+  users.knownUsers = [ user.username ];
   users.users.${user.username} = {
     name = user.username;
     description = user.name;
     home = "/Users/${user.username}";
     shell = pkgs.${user.shell};
+    uid = uid;
   };
 }
