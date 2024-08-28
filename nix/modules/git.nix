@@ -6,6 +6,7 @@
 }:
 let
   signingEnabled = config.git.user.key != null;
+  gh = "${pkgs.gh}/bin/gh";
 in
 {
   options.git = {
@@ -47,10 +48,10 @@ in
         merge.conflictStyle = "diff3";
         core.editor = "code --wait";
         "credential \"https://github.com\"" = {
-          helper = "${pkgs.gh} auth git-credential";
+          helper = "${gh} auth git-credential";
         };
         "credential \"https://git.github.com\"" = {
-          helper = "${pkgs.gh} auth git-credential";
+          helper = "${gh} auth git-credential";
         };
       };
     };
