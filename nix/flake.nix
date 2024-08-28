@@ -60,6 +60,9 @@
             };
           }
         ];
+        specialArgs = {
+          inherit user inputs;
+        };
       };
     };
 }

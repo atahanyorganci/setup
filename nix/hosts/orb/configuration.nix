@@ -1,5 +1,4 @@
-{ config, pkgs, modulesPath, ... }:
-
+{ config, pkgs, modulesPath, user, ... }:
 {
   imports =
     [
@@ -8,16 +7,17 @@
       # Include the OrbStack-specific configuration.
       ./orbstack.nix
     ];
-  users.users.atahan = {
+  users.users.${user.username} = {
     uid = 501;
     extraGroups = [ "wheel" ];
     isSystemUser = true;
     group = "users";
     createHome = true;
-    home = "/home/atahan";
+    home = "/home/${user.username}";
     homeMode = "700";
-    useDefaultShell = true;
+    shell = pkgs.${user.shell};
   };
+  programs.${user.shell}.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
