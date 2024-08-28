@@ -29,7 +29,7 @@
         # CPU architecture for the system.
         system = "aarch64-darwin";
         modules = [
-          ./hosts/macbook-pro/configuration.nix
+          ./hosts/macbook-pro
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -48,7 +48,7 @@
       nixosConfigurations.orb = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          ./hosts/orb/configuration.nix
+          ./hosts/orb
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
