@@ -15,6 +15,29 @@ let
   sortedVersions = builtins.sort (a: b: (builtins.compareVersions a b) < 0) availableVersions;
   latestVersion = builtins.elemAt sortedVersions (builtins.length sortedVersions - 1);
   python = versions.${config.python.version};
+  pythonPackageTools = [
+    (python.withPackages (
+      pkgs: with pkgs; [
+        black
+        isort
+        mypy
+        pipx
+        tox
+        virtualenv
+        pip
+        ipython
+        matplotlib
+        numpy
+        pandas
+      ]
+    ))
+  ];
+  standaloneTools = with pkgs; [
+    ruff
+    poetry
+    pipenv
+  ];
+  pythonTools = pythonPackageTools ++ standaloneTools;
 in
 {
   options.python = {
@@ -23,10 +46,13 @@ in
       default = latestVersion;
       description = "The version of Python to install.";
     };
+    installTools = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Install Python development tools.";
+    };
   };
   config = {
-    home.packages = with pkgs; [
-      python
-    ];
+    home.packages = if config.python.installTools then pythonTools else [ python ];
   };
 }
