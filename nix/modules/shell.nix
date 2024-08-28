@@ -34,4 +34,16 @@
       }
     ];
   };
+  # starship - The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+  # GitHub Repository: https://github.com/starship/starship
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    settings = {
+      aws.disabled = true;
+      gcloud.disabled = true;
+    };
+  };
 }

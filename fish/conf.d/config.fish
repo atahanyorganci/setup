@@ -51,10 +51,6 @@ set -Ux CARGO_HOME $XDG_DATA_HOME/cargo
 set -Ux RUSTUP_HOME $XDG_DATA_HOME/rustup
 fish_add_path "$CARGO_HOME/bin"
 
-# Set fish prompt and greeting
-eval (starship init fish)
-set fish_greeting
-
 # Optout of the .NET telementry
 set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
 

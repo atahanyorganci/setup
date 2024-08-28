@@ -13,7 +13,6 @@
 !python
 !python/**
 !wgetrc
-!starship.toml
 !installers
 !installers/**
 !mise
