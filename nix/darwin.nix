@@ -11,7 +11,6 @@ inputs@{ pkgs, user, ... }:
     "firefox"
     "google-chrome"
     "visual-studio-code"
-    "alacritty"
     "raycast"
     "orbstack"
   ];

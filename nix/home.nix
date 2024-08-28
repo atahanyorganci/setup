@@ -10,6 +10,7 @@
     ./modules/git.nix
     ./modules/shell.nix
     ./modules/python.nix
+    ./modules/alacritty.nix
   ];
   kitty = {
     enable = true;
@@ -21,6 +22,7 @@
       inherit (user) name email key;
     };
   };
+  alacritty.enable = true;
   # User pacakges
   home.packages = with pkgs; [
     qrencode

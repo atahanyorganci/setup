@@ -4,8 +4,6 @@
 !.gitignore
 !fish
 !fish/**
-!alacritty
-!alacritty/**
 !zsh
 !zsh/**
 !ipython
