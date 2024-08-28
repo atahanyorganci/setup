@@ -48,10 +48,6 @@ inputs@{ pkgs, user, ... }:
       Weekday = 0;
     }
   ];
-  # Enable `bash`, `zsh`, and `fish` shells.
-  programs.bash.enable = true;
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.

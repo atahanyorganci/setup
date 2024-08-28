@@ -8,6 +8,7 @@
   imports = [
     ./modules/kitty.nix
     ./modules/git.nix
+    ./modules/shell.nix
   ];
   kitty = {
     enable = true;
