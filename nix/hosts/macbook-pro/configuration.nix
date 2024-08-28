@@ -1,9 +1,11 @@
 inputs@{ pkgs, user, ... }:
 {
   imports = [
-    ./modules/nix-darwin/homebrew.nix
+    ../../modules/nix-darwin/homebrew.nix
   ];
+  # Disable `nix-darwin` documentation
   documentation.enable = false;
+  # System fonts
   fonts.packages = [ pkgs.cascadia-code ];
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -23,7 +25,7 @@ inputs@{ pkgs, user, ... }:
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
-  # Users
+  # Default user
   users.users.${user.username} = {
     name = user.username;
     description = user.name;

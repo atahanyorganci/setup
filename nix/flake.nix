@@ -25,19 +25,17 @@
       };
     in
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Atahan-MacBook-Pro
       darwinConfigurations."Atahan-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         # CPU architecture for the system.
         system = "aarch64-darwin";
         modules = [
-          ./darwin.nix
+          ./hosts/macbook-pro/configuration.nix
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
-            home-manager.users.${user.username} = ./home.nix;
+            home-manager.users.${user.username} = ./hosts/macbook-pro/home.nix;
             home-manager.extraSpecialArgs = {
               inherit user;
             };
@@ -47,7 +45,5 @@
           inherit user inputs;
         };
       };
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Atahan-MacBook-Pro".pkgs;
     };
 }

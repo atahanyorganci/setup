@@ -1,7 +1,7 @@
 { pkgs, user, ... }:
 {
   imports = [
-    ./modules/home-manager
+    ../../modules/home-manager
   ];
   alacritty.enable = true;
   git = {
