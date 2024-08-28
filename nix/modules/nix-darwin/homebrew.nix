@@ -25,7 +25,10 @@ in
     };
   };
   config = {
-    homebrew.enable = enabled;
-    homebrew.casks = casks;
+    homebrew = {
+      enable = enabled;
+      casks = casks;
+      caskArgs.no_quarantine = true;
+    };
   };
 }
