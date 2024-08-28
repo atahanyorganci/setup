@@ -9,6 +9,7 @@
     ./modules/kitty.nix
     ./modules/git.nix
     ./modules/shell.nix
+    ./modules/python.nix
   ];
   kitty = {
     enable = true;

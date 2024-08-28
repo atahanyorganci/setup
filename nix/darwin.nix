@@ -5,8 +5,6 @@ inputs@{ pkgs, user, ... }:
   environment.systemPackages = with pkgs; [
     pandoc
     nixfmt-rfc-style
-    poetry
-    pipx
   ];
   fonts.packages = [ pkgs.cascadia-code ];
   # Install GUI applications using Homebrew so they are available in Spotlight.
