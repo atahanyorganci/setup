@@ -6,8 +6,6 @@
 !fish/**
 !alacritty
 !alacritty/**
-!git
-!git/**
 !zsh
 !zsh/**
 !ipython
