@@ -41,6 +41,7 @@ let
 in
 {
   options.python = {
+    enable = lib.mkEnableOption "Python";
     version = lib.mkOption {
       type = lib.types.enum sortedVersions;
       default = latestVersion;
@@ -52,7 +53,7 @@ in
       description = "Install Python development tools.";
     };
   };
-  config = {
+  config = lib.mkIf config.python.enable {
     home.packages = if config.python.installTools then pythonTools else [ python ];
   };
 }

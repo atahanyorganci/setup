@@ -12,15 +12,16 @@
     ./modules/home-manager/python.nix
     ./modules/home-manager/alacritty
   ];
-  kitty = {
-    enable = true;
-    font.name = "Cascadia Code NF";
-  };
+  alacritty.enable = true;
   git = {
     enable = true;
     user = {
       inherit (user) name email key;
     };
   };
-  alacritty.enable = true;
+  kitty = {
+    enable = true;
+    font.name = "Cascadia Code NF";
+  };
+  python.enable = true;
 }
