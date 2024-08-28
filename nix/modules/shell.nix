@@ -80,5 +80,6 @@
     pandoc
     nixfmt-rfc-style
     ffmpeg
+    qrencode
   ];
 }
