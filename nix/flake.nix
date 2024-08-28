@@ -17,8 +17,9 @@
     }:
     let
       user = {
-        name = "atahan";
-        fullName = "Atahan Yorgancı";
+        name = "Atahan Yorgancı";
+        email = "atahanyorganci@hotmail.com";
+        username = "atahan";
         shell = "fish";
       };
     in
@@ -35,7 +36,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
-            home-manager.users.${user.name} = ./home.nix;
+            home-manager.users.${user.username} = ./home.nix;
           }
         ];
         specialArgs = {

@@ -59,10 +59,10 @@ inputs@{ pkgs, user, ... }:
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
   # Users
-  users.users.${user.name} = {
-    name = user.name;
-    description = user.fullName;
-    home = "/Users/${user.name}";
+  users.users.${user.username} = {
+    name = user.username;
+    description = user.name;
+    home = "/Users/${user.username}";
     shell = pkgs.${user.shell};
   };
 }
