@@ -6,11 +6,11 @@
   programs.home-manager.enable = true;
   # Import modules
   imports = [
-    ./modules/kitty.nix
-    ./modules/git.nix
-    ./modules/shell.nix
-    ./modules/python.nix
-    ./modules/alacritty.nix
+    ./modules/home-manager/kitty.nix
+    ./modules/home-manager/git.nix
+    ./modules/home-manager/shell.nix
+    ./modules/home-manager/python.nix
+    ./modules/home-manager/alacritty
   ];
   kitty = {
     enable = true;

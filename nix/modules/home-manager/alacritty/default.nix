@@ -6,7 +6,7 @@
   ...
 }:
 let
-  data = builtins.fromTOML (builtins.readFile ./dracula.toml);
+  dracula = builtins.fromTOML (builtins.readFile ./themes/dracula.toml);
   shell = pkgs.${user.shell};
   shellBin = "${shell}/bin/${user.shell}";
 in
@@ -44,7 +44,7 @@ in
             y = 32;
           };
         };
-      } // data;
+      } // dracula;
     };
   };
 }
