@@ -73,6 +73,12 @@
     dust
     gum
     hyperfine
+    tokei
+    onefetch
+    neofetch
     go-task
+    pandoc
+    nixfmt-rfc-style
+    ffmpeg
   ];
 }

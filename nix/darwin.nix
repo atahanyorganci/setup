@@ -1,11 +1,6 @@
 inputs@{ pkgs, user, ... }:
 {
   documentation.enable = false;
-  # Packages from `nixpkgs` to be installed on the system.
-  environment.systemPackages = with pkgs; [
-    pandoc
-    nixfmt-rfc-style
-  ];
   fonts.packages = [ pkgs.cascadia-code ];
   # Install GUI applications using Homebrew so they are available in Spotlight.
   homebrew.enable = true;
