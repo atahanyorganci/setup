@@ -46,4 +46,33 @@
       gcloud.disabled = true;
     };
   };
+  # fzf - A command-line fuzzy finder
+  # GitHub Repository: https://github.com/junegunn/fzf
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    historyWidgetOptions = [ "--prompt='History> '" ];
+  };
+  # zoxide - A smarter cd command.
+  # GitHub Repository: https://github.com/ajeetdsouza/zoxide
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+  };
+  home.packages = with pkgs; [
+    eza
+    bat
+    delta
+    fd
+    ripgrep
+    just
+    dust
+    gum
+    hyperfine
+    go-task
+  ];
 }

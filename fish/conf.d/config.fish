@@ -54,10 +54,6 @@ fish_add_path "$CARGO_HOME/bin"
 # Optout of the .NET telementry
 set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
 
-# Configure `fzf.fish` keybindings
-fzf_configure_bindings
-fzf_configure_bindings --git_log=\cg
-
 # Move `.node_repl_history` to `XDG_STATE_HOME`
 set -Ux NODE_REPL_HISTORY $XDG_STATE_HOME/node_repl_history
 
@@ -76,5 +72,3 @@ fish_add_path "$FLY_INSTALL/bin" $PATH
 set -Ux DOCKER_CONFIG_HOME "$XDG_CONFIG_HOME/docker"
 set -Ux WGETRC "$XDG_CONFIG_HOME/wgetrc"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
-
-zoxide init fish | source
