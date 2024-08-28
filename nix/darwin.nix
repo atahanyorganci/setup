@@ -1,19 +1,10 @@
 inputs@{ pkgs, user, ... }:
 {
+  imports = [
+    ./modules/nix-darwin/homebrew.nix
+  ];
   documentation.enable = false;
   fonts.packages = [ pkgs.cascadia-code ];
-  # Install GUI applications using Homebrew so they are available in Spotlight.
-  homebrew.enable = true;
-  homebrew.casks = [
-    "whatsapp"
-    "slack"
-    "spotify"
-    "firefox"
-    "google-chrome"
-    "visual-studio-code"
-    "raycast"
-    "orbstack"
-  ];
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   # Necessary for using flakes on this system.
