@@ -45,5 +45,11 @@
           inherit user inputs;
         };
       };
+      nixosConfigurations.orb = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/orb/configuration.nix
+        ];
+      };
     };
 }
