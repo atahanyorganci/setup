@@ -1,16 +1,7 @@
 { pkgs, user, ... }:
 {
-  # Compability with NixOS
-  home.stateVersion = "24.05";
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  # Import modules
   imports = [
-    ./modules/home-manager/kitty.nix
-    ./modules/home-manager/git.nix
-    ./modules/home-manager/shell.nix
-    ./modules/home-manager/python.nix
-    ./modules/home-manager/alacritty
+    ./modules/home-manager
   ];
   alacritty.enable = true;
   git = {
