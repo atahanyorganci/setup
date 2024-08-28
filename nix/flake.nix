@@ -21,6 +21,7 @@
         email = "atahanyorganci@hotmail.com";
         username = "atahan";
         shell = "fish";
+        key = "F3F2B2EDB7562F09";
       };
     in
     {
@@ -37,6 +38,9 @@
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
             home-manager.users.${user.username} = ./home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit user;
+            };
           }
         ];
         specialArgs = {
