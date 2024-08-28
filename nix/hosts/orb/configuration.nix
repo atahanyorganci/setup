@@ -1,12 +1,20 @@
-{ config, pkgs, modulesPath, user, ... }:
 {
-  imports =
-    [
-      # Include the default lxd configuration.
-      "${modulesPath}/virtualisation/lxc-container.nix"
-      # Include the OrbStack-specific configuration.
-      ./orbstack.nix
-    ];
+  config,
+  pkgs,
+  modulesPath,
+  user,
+  ...
+}:
+{
+  imports = [
+    # Include the default lxd configuration.
+    "${modulesPath}/virtualisation/lxc-container.nix"
+    # Include the OrbStack-specific configuration.
+    ./orbstack.nix
+  ];
+  # This being `true` leads to a few nasty bugs, change at your own risk!
+  users.mutableUsers = false;
+  # Shared user
   users.users.${user.username} = {
     uid = 501;
     extraGroups = [ "wheel" ];
@@ -18,30 +26,10 @@
     shell = pkgs.${user.shell};
   };
   programs.${user.shell}.enable = true;
-
+  # Disable password for `sudo` command.
   security.sudo.wheelNeedsPassword = false;
-
-  # This being `true` leads to a few nasty bugs, change at your own risk!
-  users.mutableUsers = false;
-
+  # Timezone
   time.timeZone = "Europe/Istanbul";
-  networking = {
-    hostName = "orb";
-    dhcpcd.enable = false;
-    useDHCP = false;
-    useHostResolvConf = false;
-  };
-  systemd.network = {
-    enable = true;
-    networks."50-eth0" = {
-      matchConfig.Name = "eth0";
-      networkConfig = {
-        DHCP = "ipv4";
-        IPv6AcceptRA = true;
-      };
-      linkConfig.RequiredForOnline = "routable";
-    };
-  };
-
+  # NixOS version
   system.stateVersion = "24.05";
 }
