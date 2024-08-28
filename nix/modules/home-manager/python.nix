@@ -55,5 +55,12 @@ in
   };
   config = lib.mkIf config.python.enable {
     home.packages = if config.python.installTools then pythonTools else [ python ];
+    home.file.".config/ipython/profile_default/ipython_config.py" = {
+      enable = config.python.installTools;
+      text = ''
+        c.TerminalIPythonApp.display_banner = False
+        c.TerminalInteractiveShell.confirm_exit = False
+      '';
+    };
   };
 }
