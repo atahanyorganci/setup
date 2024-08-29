@@ -48,7 +48,7 @@ let
     # Miscellaneous utilities
     os = "uname -o";
     # `wget`
-    wget = "${pkgs.wget} --hsts-file=${config.xdg.cacheHome}/wget-hsts";
+    wget = "${pkgs.wget}/bin/wget --hsts-file=${config.xdg.cacheHome}/wget-hsts";
   };
   enable = config.shell.bash || config.shell.zsh || config.shell.fish;
   shellAliases = if enable && config.shell.enableAliases then aliases else { };
