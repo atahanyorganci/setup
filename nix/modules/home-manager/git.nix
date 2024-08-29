@@ -6,7 +6,6 @@
 }:
 let
   signingEnabled = config.git.user.key != null;
-  gh = "${pkgs.gh}/bin/gh";
 in
 {
   options.git = {
@@ -28,8 +27,10 @@ in
     };
   };
   config = lib.mkIf config.git.enable {
+    home.packages = [ pkgs.git pkgs.gh ];
     programs.git = {
       enable = true;
+      package = pkgs.git;
       userName = config.git.user.name;
       userEmail = config.git.user.email;
       signing = {
@@ -49,10 +50,10 @@ in
         merge.conflictStyle = "diff3";
         core.editor = "code --wait";
         "credential \"https://github.com\"" = {
-          helper = "${gh} auth git-credential";
+          helper = "${pkgs.gh}/bin/gh auth git-credential";
         };
         "credential \"https://git.github.com\"" = {
-          helper = "${gh} auth git-credential";
+          helper = "${pkgs.gh}/bin/gh auth git-credential";
         };
       };
     };
