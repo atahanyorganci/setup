@@ -1,7 +1,7 @@
 function __clone_github
     set -f user $argv[1]
     set -f repo $argv[2]
-    set -f repo_dir "$DEV_HOME/github/$user/$repo"
+    set -f repo_dir "$GITHUB_HOME/$user/$repo"
     info "Cloning $user/$repo into $repo_dir"
 
     mkdir -p $repo_dir
@@ -26,7 +26,7 @@ function clone --description 'Clone git repository into development dir'
     else if test -n "$_flag_git"
         set -l parts (string split '/' $argv[1])
         set -l name (string replace '.git' '' $parts[-1])
-        set -l repo_dir "$DEV_HOME/git/$name"
+        set -l repo_dir "$GITHUB_HOME/git/$name"
 
         info "Cloning $name into $repo_dir"
         mkdir -p $repo_dir
