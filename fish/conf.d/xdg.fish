@@ -1,26 +1,5 @@
 #!/usr/bin/env fish
 
-function fish_title --description "Set terminal title"
-    if set -q argv[1]
-        set -l arg $argv[1]
-        echo "[$arg] @ "
-    end
-    set -l escaped (string replace -a "/" "\/" $HOME)
-    if string match -rq "$escaped(?<path>.*)" $PWD
-        echo "~$path"
-    else
-        echo $PWD
-    end
-end
-
-function c --description "Visiual Studio Code" --wraps code
-    if test (count $argv) -gt 0
-        command code $argv
-    else
-        command code .
-    end
-end
-
 set -Ux EDITOR code
 set -Ux DEV_HOME $HOME/Documents
 

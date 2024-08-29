@@ -1,6 +1,3 @@
 *
 !.gitignore
-!config.fish
-!git.fish
-!gum.fish
-!ffmpeg.fish
+!xdg.fish
