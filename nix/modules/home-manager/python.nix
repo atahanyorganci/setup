@@ -54,6 +54,10 @@ in
     };
   };
   config = lib.mkIf config.python.enable {
+    home.sessionVariables = {
+      PYTHONSTARTUP = "${config.xdg.configHome}/python/startup.py";
+      PYTHONHISTFILE = "${config.xdg.cacheHome}/python/history.py";
+    };
     home.packages = if config.python.installTools then pythonTools else [ python ];
     home.file.".config/ipython/profile_default/ipython_config.py" = {
       enable = config.python.installTools;

@@ -24,10 +24,6 @@ set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
 # Move `.node_repl_history` to `XDG_STATE_HOME`
 set -Ux NODE_REPL_HISTORY $XDG_STATE_HOME/node_repl_history
 
-# Execute startup script to change .python_history's location
-set -Ux PYTHONSTARTUP $XDG_CONFIG_HOME/python/startup.py
-set -Ux PYTHONHISTFILE $XDG_STATE_HOME/python/history
-
 # Configure kitty
 set -l KITTY_CONFIG_DIRECTORY $XDG_CONFIG_HOME/kitty
 set -l KITTY_CACHE_DIRECTORY $XDG_CACHE_HOME/kitty
