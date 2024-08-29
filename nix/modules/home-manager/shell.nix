@@ -150,6 +150,7 @@ in
       bat
       delta
       fd
+      sd
       ripgrep
       just
       dust
