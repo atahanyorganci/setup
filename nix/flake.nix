@@ -64,5 +64,16 @@
           inherit user inputs;
         };
       };
+      homeConfigurations.${user.username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+        };
+        modules = [
+          ./hosts/yoga/home.nix
+        ];
+        extraSpecialArgs = {
+          inherit user;
+        };
+      };
     };
 }
