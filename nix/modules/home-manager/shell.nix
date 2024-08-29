@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  user,
   ...
 }:
 let
@@ -117,6 +118,14 @@ in
             rev = "1.1.0";
             sha256 = "sha256-MdcZUDRtNJdiyo2l9o5ma7nAX84xEJbGFhAVhK+Zm1w=";
           };
+        }
+        {
+          name = "${user.username}-config";
+          src = ../../../plugins/config;
+        }
+        {
+          name = "${user.username}-tools";
+          src = ../../../plugins/tools;
         }
       ];
     };
