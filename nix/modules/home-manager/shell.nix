@@ -47,6 +47,8 @@ let
     ffprobe = "${pkgs.ffmpeg}/bin/ffprobe -hide_banner";
     # Miscellaneous utilities
     os = "uname -o";
+    # `wget`
+    wget = "${pkgs.wget} --hsts-file=${config.xdg.cacheHome}/wget-hsts";
   };
   enable = config.shell.bash || config.shell.zsh || config.shell.fish;
   shellAliases = if enable && config.shell.enableAliases then aliases else { };
@@ -59,6 +61,13 @@ in
     enableAliases = lib.mkEnableOption "Enable shell aliases";
   };
   config = {
+    home.sessionVariables = {
+      WGETRC = "${config.xdg.configHome}/wgetrc";
+    };
+    home.file = {
+      "${config.xdg.configHome}/wgetrc".text = "";
+    };
+    xdg.enable = true;
     programs.bash = {
       enable = config.shell.bash;
       shellAliases = shellAliases;
@@ -148,6 +157,7 @@ in
       nixfmt-rfc-style
       ffmpeg
       qrencode
+      wget
     ];
   };
 }

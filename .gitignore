@@ -6,6 +6,5 @@
 !fish/**
 !zsh
 !zsh/**
-!wgetrc
 !nix
 !nix/**
