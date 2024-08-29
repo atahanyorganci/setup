@@ -8,6 +8,7 @@ inputs: {
     ./alacritty
     ./git.nix
     ./kitty.nix
+    ./node.nix
     ./python.nix
     ./shell.nix
   ];
