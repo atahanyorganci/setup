@@ -77,6 +77,11 @@ in
     programs.zsh = lib.mkIf config.shell.zsh {
       enable = true;
       shellAliases = shellAliases;
+      enableCompletion = true;
+      history = {
+        path = "${config.xdg.dataHome}/zsh/history";
+        share = true;
+      };
     };
     programs.fish = lib.mkIf config.shell.fish {
       enable = true;
