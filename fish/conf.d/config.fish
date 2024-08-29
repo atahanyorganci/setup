@@ -30,18 +30,6 @@ set -Ux XDG_DATA_HOME $HOME/.local/share
 set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux XDG_STATE_HOME $HOME/.local/state
 
-# OS dependent configurations
-switch $OS
-    case Darwin
-        # Initialize Homebrew
-        /opt/homebrew/bin/brew shellenv | source
-    case WSL
-        # Add WIN_ROOT and WIN_HOME to WSL environment
-        set -Ux WIN_ROOT /mnt/c
-        set -Ux WIN_HOME /mnt/c/Users/Atahan
-        fish_add_path "$WIN_ROOT/Program Files/Microsoft VS Code/bin"
-end
-
 # Add .local/bin to `PATH`
 mkdir -p "$HOME/.local/bin"
 fish_add_path "$HOME/.local/bin"

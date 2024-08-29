@@ -15,4 +15,10 @@
     font.name = "Cascadia Code NF";
   };
   python.enable = true;
+  shell = {
+    bash = true;
+    zsh = true;
+    fish = true;
+    enableAliases = true;
+  };
 }
