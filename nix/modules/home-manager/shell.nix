@@ -49,6 +49,10 @@ let
     os = "uname -o";
     # `wget`
     wget = "${pkgs.wget}/bin/wget --hsts-file=${config.xdg.cacheHome}/wget-hsts";
+    # `ll` - list files with long format with `eza`
+    ll = "${pkgs.eza}/bin/eza --long --header --icons";
+    # `tree` - list files in a tree format with `eza`
+    tree = "${pkgs.eza}/bin/eza --tree --long --header --icons";
   };
   enable = config.shell.bash || config.shell.zsh || config.shell.fish;
   shellAliases = if enable && config.shell.enableAliases then aliases else { };
