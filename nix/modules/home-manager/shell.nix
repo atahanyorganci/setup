@@ -69,17 +69,17 @@ in
       "${config.xdg.configHome}/wgetrc".text = "";
     };
     xdg.enable = true;
-    programs.bash = {
-      enable = config.shell.bash;
+    programs.bash = lib.mkIf config.shell.bash {
+      enable = true;
       shellAliases = shellAliases;
       enableCompletion = true;
     };
-    programs.zsh = {
-      enable = config.shell.zsh;
+    programs.zsh = lib.mkIf config.shell.zsh {
+      enable = true;
       shellAliases = shellAliases;
     };
-    programs.fish = {
-      enable = config.shell.fish;
+    programs.fish = lib.mkIf config.shell.fish {
+      enable = true;
       shellAliases = shellAliases;
       plugins = [
         {
