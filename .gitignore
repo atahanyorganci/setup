@@ -8,3 +8,5 @@
 !zsh/**
 !nix
 !nix/**
+!plugins
+!plugins/**
