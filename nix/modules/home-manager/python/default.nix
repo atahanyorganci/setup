@@ -59,12 +59,15 @@ in
       PYTHONHISTFILE = "${config.xdg.cacheHome}/python/history.py";
     };
     home.packages = if config.python.installTools then pythonTools else [ python ];
-    home.file.".config/ipython/profile_default/ipython_config.py" = {
-      enable = config.python.installTools;
-      text = ''
-        c.TerminalIPythonApp.display_banner = False
-        c.TerminalInteractiveShell.confirm_exit = False
-      '';
+    home.file = {
+      ".config/ipython/profile_default/ipython_config.py" = {
+        enable = config.python.installTools;
+        source = ./ipython/profile_deafult/ipython_config.py;
+      };
+      ".config/python/startup.py" = {
+        enable = true;
+        source = ./python/startup.py;
+      };
     };
   };
 }

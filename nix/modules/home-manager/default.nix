@@ -9,7 +9,7 @@ inputs: {
     ./git.nix
     ./kitty.nix
     ./node.nix
-    ./python.nix
+    ./python
     ./shell.nix
   ];
 }
