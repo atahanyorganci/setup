@@ -2,10 +2,6 @@
 !README.md
 !LICENSE.md
 !.gitignore
-!fish
-!fish/**
-!zsh
-!zsh/**
 !nix
 !nix/**
 !plugins
