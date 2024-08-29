@@ -1,7 +1,5 @@
 #!/usr/bin/env fish
 
-set -Ux GITHUB_HOME $HOME/Documents
-
 # Optout of the .NET telementry
 set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
 

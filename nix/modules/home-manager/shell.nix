@@ -63,6 +63,7 @@ in
   config = {
     home.sessionVariables = {
       WGETRC = "${config.xdg.configHome}/wgetrc";
+      GITHUB_HOME = "${config.xdg.userDirs.documents}/GitHub";
     };
     home.file = {
       "${config.xdg.configHome}/wgetrc".text = "";
