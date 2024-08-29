@@ -57,6 +57,13 @@ let
   };
   enable = config.shell.bash || config.shell.zsh || config.shell.fish;
   shellAliases = if enable && config.shell.enableAliases then aliases else { };
+  initExtra = ''
+    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+    then
+      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+    fi
+  '';
 in
 {
   options.shell = {
@@ -64,6 +71,7 @@ in
     zsh = lib.mkEnableOption "Enable Zsh shell";
     bash = lib.mkEnableOption "Enable Bash shell";
     enableAliases = lib.mkEnableOption "Enable shell aliases";
+    enableFishShellPatch = lib.mkEnableOption "Add `initExtra` to shells to run Fish shell by default";
   };
   config = {
     home.sessionVariables = {
@@ -78,6 +86,7 @@ in
       enable = true;
       shellAliases = shellAliases;
       enableCompletion = true;
+      initExtra = if config.shell.enableFishShellPatch && config.shell.bash then initExtra else "";
     };
     programs.zsh = lib.mkIf config.shell.zsh {
       enable = true;
@@ -87,6 +96,7 @@ in
         path = "${config.xdg.dataHome}/zsh/history";
         share = true;
       };
+      initExtra = if config.shell.enableFishShellPatch && config.shell.zsh then initExtra else "";
     };
     programs.fish = lib.mkIf config.shell.fish {
       enable = true;
