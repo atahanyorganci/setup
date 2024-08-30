@@ -20,10 +20,9 @@
   node.enable = true;
   python.enable = true;
   shell = {
-    bash = true;
-    zsh = true;
-    fish = true;
-    enableAliases = true;
+    bash.enable = true;
+    zsh.enable = true;
+    fish.enable = true;
   };
   tools.enable = true;
   wget.enable = true;

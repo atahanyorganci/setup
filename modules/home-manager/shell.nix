@@ -5,15 +5,16 @@
 , ...
 }:
 let
+  cfg = config.shell;
   shellAliases = {
-    # Miscellaneous utilities
+    # get OS name ex: "GNU/Linux", "Darwin"
     os = "uname -o";
     # `ll` - list files with long format with `eza`
     ll = "${pkgs.eza}/bin/eza --long --header --icons";
     # `tree` - list files in a tree format with `eza`
     tree = "${pkgs.eza}/bin/eza --tree --long --header --icons";
   };
-  enable = config.shell.bash || config.shell.zsh || config.shell.fish;
+  enable = cfg.fish.enable || cfg.zsh.enable || cfg.bash.enable;
   initExtra = ''
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
     then
@@ -24,32 +25,37 @@ let
 in
 {
   options.shell = {
-    fish = lib.mkEnableOption "Enable Fish shell";
-    zsh = lib.mkEnableOption "Enable Zsh shell";
-    bash = lib.mkEnableOption "Enable Bash shell";
-    enableAliases = lib.mkEnableOption "Enable shell aliases";
-    enableFishShellPatch = lib.mkEnableOption "Add `initExtra` to shells to run Fish shell by default";
+    fish = {
+      enable = lib.mkEnableOption "Fish shell";
+      addInitExtra = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether to add `initExtra` to other shells to run Fish shell by default";
+      };
+    };
+    zsh.enable = lib.mkEnableOption "zsh";
+    bash.enable = lib.mkEnableOption "bash";
   };
-  config = {
+  config = lib.mkIf enable {
     home.shellAliases = shellAliases;
     home.sessionVariables = {
       GITHUB_HOME = "${config.xdg.userDirs.documents}/GitHub";
     };
-    programs.bash = lib.mkIf config.shell.bash {
+    programs.bash = lib.mkIf cfg.bash.enable {
       enable = true;
       enableCompletion = true;
-      initExtra = if config.shell.enableFishShellPatch && config.shell.bash then initExtra else "";
+      initExtra = if cfg.fish.addInitExtra && cfg.bash then initExtra else "";
     };
-    programs.zsh = lib.mkIf config.shell.zsh {
+    programs.zsh = lib.mkIf cfg.zsh.enable {
       enable = true;
       enableCompletion = true;
       history = {
         path = "${config.xdg.dataHome}/zsh/history";
         share = true;
       };
-      initExtra = if config.shell.enableFishShellPatch && config.shell.zsh then initExtra else "";
+      initExtra = if cfg.fish.addInitExtra && cfg.zsh then initExtra else "";
     };
-    programs.fish = lib.mkIf config.shell.fish {
+    programs.fish = lib.mkIf cfg.fish.enable {
       enable = true;
       plugins = [
         {
@@ -93,9 +99,9 @@ in
     # GitHub Repository: https://github.com/starship/starship
     programs.starship = {
       enable = enable;
-      enableBashIntegration = config.shell.bash;
-      enableZshIntegration = config.shell.zsh;
-      enableFishIntegration = config.shell.fish;
+      enableBashIntegration = cfg.bash.enable;
+      enableZshIntegration = cfg.zsh.enable;
+      enableFishIntegration = cfg.fish.enable;
       settings = {
         aws.disabled = true;
         gcloud.disabled = true;
@@ -105,18 +111,18 @@ in
     # GitHub Repository: https://github.com/junegunn/fzf
     programs.fzf = {
       enable = enable;
-      enableBashIntegration = config.shell.bash;
-      enableZshIntegration = config.shell.zsh;
-      enableFishIntegration = config.shell.fish;
+      enableBashIntegration = cfg.bash.enable;
+      enableZshIntegration = cfg.zsh.enable;
+      enableFishIntegration = cfg.fish.enable;
       historyWidgetOptions = [ "--prompt='History> '" ];
     };
     # zoxide - A smarter cd command.
     # GitHub Repository: https://github.com/ajeetdsouza/zoxide
     programs.zoxide = {
       enable = enable;
-      enableBashIntegration = config.shell.bash;
-      enableZshIntegration = config.shell.zsh;
-      enableFishIntegration = config.shell.fish;
+      enableBashIntegration = cfg.bash.enable;
+      enableZshIntegration = cfg.zsh.enable;
+      enableFishIntegration = cfg.fish.enable;
     };
     home.packages = with pkgs; [
       eza

@@ -9,6 +9,7 @@
     packages = with pkgs; [ hello ];
   };
   alacritty.enable = true;
+  ffmpeg.enable = true;
   git = {
     enable = true;
     aliases.enable = true;
@@ -16,6 +17,7 @@
       inherit (user) name email key;
     };
   };
+  gum.enable = true;
   kitty = {
     enable = true;
     font.name = "Cascadia Code NF";
@@ -23,9 +25,13 @@
   node.enable = true;
   python.enable = true;
   shell = {
-    bash = true;
-    fish = true;
-    enableAliases = true;
-    enableFishShellPatch = true;
+    bash.enable = true;
+    zsh.enable = true;
+    fish = {
+      enable = true;
+      addInitExtra = true;
+    };
   };
+  tools.enable = true;
+  wget.enable = true;
 }
