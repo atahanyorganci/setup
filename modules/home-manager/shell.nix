@@ -131,6 +131,7 @@ in
       fd
       sd
       ripgrep
+      jq
     ];
   };
 }
