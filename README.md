@@ -1,9 +1,10 @@
 # Dotfiles
 
-Configured programs
+Nix flake for managing system and home configuration for various host machines.
 
-- [`fish`](fish/README.md) user-friendly command line shell.
-- [`alacritty`](alacritty/alacritty.yml) fast, cross-platform, OpenGL terminal emulator.
-- [`zsh`](zsh/README.md) shell designed for interactive use, although it is also a powerful scripting language.
-- [`ipython`](ipython/README.md) rich toolkit to help you make the most of using Python interactively
-- [`python`](python/README.md) general-purpose scripting language.
+- [`nix-darwin`][nix-darwin] for [MacBook Pro](./hosts/macbook-pro/default.nix)
+- NixOS config ofr [OrbStack NixOs VM](./hosts/orb/home.nix)
+- [`home-manager`][home-manager] for [Lenovo Yoga Laptop](./hosts/yoga/home.nix).
+
+[nix-darwin]: https://github.com/LnL7/nix-darwin
+[home-manager]: https://github.com/nix-community/home-manager
