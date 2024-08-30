@@ -130,11 +130,11 @@ in
         }
         {
           name = "${user.username}-config";
-          src = ../../../plugins/config;
+          src = ../../plugins/config;
         }
         {
           name = "${user.username}-tools";
-          src = ../../../plugins/tools;
+          src = ../../plugins/tools;
         }
       ];
     };

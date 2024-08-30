@@ -1,8 +1,0 @@
-*
-!README.md
-!LICENSE.md
-!.gitignore
-!nix
-!nix/**
-!plugins
-!plugins/**
