@@ -4,6 +4,7 @@
     ../../modules/home-manager
   ];
   alacritty.enable = true;
+  ffmpeg.enable = true;
   git = {
     enable = true;
     aliases.enable = true;

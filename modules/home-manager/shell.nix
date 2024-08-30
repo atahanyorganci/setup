@@ -12,9 +12,6 @@ let
     warn = "${pkgs.gum}/bin/gum log -t timeonly -l warn";
     error = "${pkgs.gum}/bin/gum log -t timeonly -l error";
     fatal = "${pkgs.gum}/bin/gum log -t timeonly -l fatal";
-    # Hide banner for ffmpeg and ffprobe
-    ffmpeg = "${pkgs.ffmpeg}/bin/ffmpeg -hide_banner";
-    ffprobe = "${pkgs.ffmpeg}/bin/ffprobe -hide_banner";
     # Miscellaneous utilities
     os = "uname -o";
     # `wget`
@@ -152,7 +149,6 @@ in
       neofetch
       go-task
       pandoc
-      ffmpeg
       qrencode
       wget
     ];

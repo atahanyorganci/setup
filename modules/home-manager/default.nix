@@ -8,6 +8,7 @@ inputs: {
   # Individual imports
   imports = [
     ./alacritty
+    ./ffmpeg.nix
     ./git
     ./kitty.nix
     ./node.nix
