@@ -44,7 +44,7 @@ in
     programs.bash = lib.mkIf cfg.bash.enable {
       enable = true;
       enableCompletion = true;
-      initExtra = if cfg.fish.addInitExtra && cfg.bash then initExtra else "";
+      initExtra = if cfg.fish.addInitExtra && cfg.bash.enable then initExtra else "";
     };
     programs.zsh = lib.mkIf cfg.zsh.enable {
       enable = true;
@@ -53,7 +53,7 @@ in
         path = "${config.xdg.dataHome}/zsh/history";
         share = true;
       };
-      initExtra = if cfg.fish.addInitExtra && cfg.zsh then initExtra else "";
+      initExtra = if cfg.fish.addInitExtra && cfg.zsh.enable then initExtra else "";
     };
     programs.fish = lib.mkIf cfg.fish.enable {
       enable = true;
