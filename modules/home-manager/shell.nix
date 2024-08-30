@@ -50,7 +50,6 @@ in
     home.file = {
       "${config.xdg.configHome}/wgetrc".text = "";
     };
-    xdg.enable = true;
     programs.bash = lib.mkIf config.shell.bash {
       enable = true;
       shellAliases = shellAliases;

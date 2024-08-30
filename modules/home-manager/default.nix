@@ -3,6 +3,8 @@ inputs: {
   home.stateVersion = "24.05";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  # Setup XDG directories and environment variables
+  xdg.enable = true;
   # Individual imports
   imports = [
     ./alacritty
