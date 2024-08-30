@@ -6,36 +6,6 @@
 }:
 let
   aliases = {
-    # `git add`
-    ga = "git add";
-    gaa = "git add --all";
-    gap = "git add --patch";
-    # `git branch`
-    gb = "git branch";
-    gbl = "git branch --list";
-    gbd = "git branch -D";
-    # `git checkout`
-    gc = "git commit";
-    gca = "git commit --amend";
-    gcm = "git commit -m";
-    # `git rebase`
-    gr = "git rebase";
-    grc = "git rebase --continue";
-    gra = "git rebase --abort";
-    gri = "git rebase --interactive";
-    # `git status`
-    gs = "git status";
-    # `git stash`
-    gss = "git stash save";
-    gsl = "git stash list";
-    gsp = "git stash pop";
-    # `git checkout`
-    gco = "git checkout";
-    gcb = "git checkout -b";
-    # `git cherry-pick`
-    gcp = "git cherry-pick";
-    # `git log`
-    gl = "git log --oneline --decorate --graph";
     # Logging utilities with Gum
     debug = "${pkgs.gum}/bin/gum log -t timeonly -l debug";
     info = "${pkgs.gum}/bin/gum log -t timeonly -l info";

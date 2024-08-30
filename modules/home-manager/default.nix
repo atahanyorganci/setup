@@ -6,7 +6,7 @@ inputs: {
   # Individual imports
   imports = [
     ./alacritty
-    ./git.nix
+    ./git
     ./kitty.nix
     ./node.nix
     ./python

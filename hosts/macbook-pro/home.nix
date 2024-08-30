@@ -6,6 +6,7 @@
   alacritty.enable = true;
   git = {
     enable = true;
+    aliases.enable = true;
     user = {
       inherit (user) name email key;
     };
