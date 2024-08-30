@@ -184,7 +184,6 @@ in
       neofetch
       go-task
       pandoc
-      nixfmt-rfc-style
       ffmpeg
       qrencode
       wget

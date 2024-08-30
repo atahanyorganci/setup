@@ -9,6 +9,7 @@
   };
   outputs =
     inputs@{
+      systems,
       self,
       nix-darwin,
       nixpkgs,
@@ -23,8 +24,10 @@
         shell = "fish";
         key = "F3F2B2EDB7562F09";
       };
+      eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
     in
     {
+      formatter = eachSystem (pkgs: pkgs.nixpkgs-fmt);
       darwinConfigurations."Atahan-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         # CPU architecture for the system.
         system = "aarch64-darwin";
