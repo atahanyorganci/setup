@@ -5,24 +5,15 @@
 , ...
 }:
 let
-  aliases = {
-    # Logging utilities with Gum
-    debug = "${pkgs.gum}/bin/gum log -t timeonly -l debug";
-    info = "${pkgs.gum}/bin/gum log -t timeonly -l info";
-    warn = "${pkgs.gum}/bin/gum log -t timeonly -l warn";
-    error = "${pkgs.gum}/bin/gum log -t timeonly -l error";
-    fatal = "${pkgs.gum}/bin/gum log -t timeonly -l fatal";
+  shellAliases = {
     # Miscellaneous utilities
     os = "uname -o";
-    # `wget`
-    wget = "${pkgs.wget}/bin/wget --hsts-file=${config.xdg.cacheHome}/wget-hsts";
     # `ll` - list files with long format with `eza`
     ll = "${pkgs.eza}/bin/eza --long --header --icons";
     # `tree` - list files in a tree format with `eza`
     tree = "${pkgs.eza}/bin/eza --tree --long --header --icons";
   };
   enable = config.shell.bash || config.shell.zsh || config.shell.fish;
-  shellAliases = if enable && config.shell.enableAliases then aliases else { };
   initExtra = ''
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
     then
@@ -40,22 +31,17 @@ in
     enableFishShellPatch = lib.mkEnableOption "Add `initExtra` to shells to run Fish shell by default";
   };
   config = {
+    home.shellAliases = shellAliases;
     home.sessionVariables = {
-      WGETRC = "${config.xdg.configHome}/wgetrc";
       GITHUB_HOME = "${config.xdg.userDirs.documents}/GitHub";
-    };
-    home.file = {
-      "${config.xdg.configHome}/wgetrc".text = "";
     };
     programs.bash = lib.mkIf config.shell.bash {
       enable = true;
-      shellAliases = shellAliases;
       enableCompletion = true;
       initExtra = if config.shell.enableFishShellPatch && config.shell.bash then initExtra else "";
     };
     programs.zsh = lib.mkIf config.shell.zsh {
       enable = true;
-      shellAliases = shellAliases;
       enableCompletion = true;
       history = {
         path = "${config.xdg.dataHome}/zsh/history";
@@ -65,7 +51,6 @@ in
     };
     programs.fish = lib.mkIf config.shell.fish {
       enable = true;
-      shellAliases = shellAliases;
       plugins = [
         {
           name = "autopair.fish";
@@ -140,17 +125,6 @@ in
       fd
       sd
       ripgrep
-      just
-      dust
-      gum
-      hyperfine
-      tokei
-      onefetch
-      neofetch
-      go-task
-      pandoc
-      qrencode
-      wget
     ];
   };
 }

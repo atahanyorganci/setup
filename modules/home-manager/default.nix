@@ -10,9 +10,12 @@ inputs: {
     ./alacritty
     ./ffmpeg.nix
     ./git
+    ./gum.nix
     ./kitty.nix
     ./node.nix
     ./python
     ./shell.nix
+    ./tools.nix
+    ./wget.nix
   ];
 }

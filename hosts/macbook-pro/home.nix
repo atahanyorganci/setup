@@ -12,6 +12,7 @@
       inherit (user) name email key;
     };
   };
+  gum.enable = true;
   kitty = {
     enable = true;
     font.name = "Cascadia Code NF";
@@ -24,4 +25,6 @@
     fish = true;
     enableAliases = true;
   };
+  tools.enable = true;
+  wget.enable = true;
 }
