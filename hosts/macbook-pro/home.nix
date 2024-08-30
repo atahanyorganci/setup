@@ -18,6 +18,7 @@
     font.name = "Cascadia Code NF";
   };
   node.enable = true;
+  pass.enable = true;
   python.enable = true;
   shell = {
     bash.enable = true;

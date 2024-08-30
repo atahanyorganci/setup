@@ -13,6 +13,7 @@ inputs: {
     ./gum.nix
     ./kitty.nix
     ./node.nix
+    ./pass.nix
     ./python
     ./shell.nix
     ./tools.nix
