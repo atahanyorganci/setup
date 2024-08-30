@@ -1,9 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  user,
-  ...
+{ pkgs
+, lib
+, config
+, user
+, ...
 }:
 let
   aliases = {

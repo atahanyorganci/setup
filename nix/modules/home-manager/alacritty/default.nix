@@ -1,9 +1,8 @@
-{
-  lib,
-  config,
-  user,
-  pkgs,
-  ...
+{ lib
+, config
+, user
+, pkgs
+, ...
 }:
 let
   dracula = builtins.fromTOML (builtins.readFile ./themes/dracula.toml);

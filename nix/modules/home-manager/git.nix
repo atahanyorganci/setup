@@ -1,8 +1,7 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
+{ lib
+, config
+, pkgs
+, ...
 }:
 let
   signingEnabled = config.git.user.key != null;

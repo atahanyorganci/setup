@@ -8,13 +8,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
-    inputs@{
-      systems,
-      self,
-      nix-darwin,
-      nixpkgs,
-      home-manager,
-      ...
+    inputs@{ systems
+    , self
+    , nix-darwin
+    , nixpkgs
+    , home-manager
+    , ...
     }:
     let
       user = {
