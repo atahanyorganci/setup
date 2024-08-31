@@ -8,6 +8,7 @@ in
     ../../modules/nix-darwin/firefox.nix
     ../../modules/nix-darwin/homebrew.nix
     ../../modules/nix-darwin/shell.nix
+    ../../modules/nix-darwin/skhd
     ../../modules/nix-darwin/yabai.nix
     ../../modules/shared/stylix.nix
   ];
@@ -54,6 +55,7 @@ in
     shell = pkgs.${user.shell};
     uid = uid;
   };
+  skhd.enable = true;
   yabai = {
     enable = true;
     padding = 8;
