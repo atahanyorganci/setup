@@ -8,6 +8,7 @@ in
     ../../modules/nix-darwin/firefox.nix
     ../../modules/nix-darwin/homebrew.nix
     ../../modules/nix-darwin/shell.nix
+    ../../modules/nix-darwin/yabai.nix
     ../../modules/shared/stylix.nix
   ];
   # Disable `nix-darwin` documentation
@@ -41,5 +42,9 @@ in
     home = "/Users/${user.username}";
     shell = pkgs.${user.shell};
     uid = uid;
+  };
+  yabai = {
+    enable = true;
+    padding = 8;
   };
 }
