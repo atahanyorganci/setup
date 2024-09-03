@@ -2,15 +2,19 @@
   description = "NixOS configuration for Atahan's MacBook Pro";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ systems
     , self
-    , nix-darwin
+    , darwin
     , nixpkgs
     , home-manager
     , ...
@@ -27,7 +31,7 @@
     in
     {
       formatter = eachSystem (pkgs: pkgs.nixpkgs-fmt);
-      darwinConfigurations."Atahan-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."Atahan-MacBook-Pro" = darwin.lib.darwinSystem {
         # CPU architecture for the system.
         system = "aarch64-darwin";
         modules = [
@@ -58,7 +62,7 @@
             home-manager.verbose = true;
             home-manager.users.${user.username} = ./hosts/orb/home.nix;
             home-manager.extraSpecialArgs = {
-              inherit user;
+              inherit user inputs;
             };
           }
         ];
