@@ -29,6 +29,7 @@ let
         matplotlib
         numpy
         pandas
+        fire
       ]
     ))
   ];
