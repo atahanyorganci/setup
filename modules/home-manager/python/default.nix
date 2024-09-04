@@ -25,6 +25,7 @@ let
         virtualenv
         pip
         ipython
+        ipykernel
         matplotlib
         numpy
         pandas
