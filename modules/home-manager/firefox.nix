@@ -19,6 +19,25 @@
       profiles.${user.username} = {
         name = user.name;
         isDefault = true;
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
+          order = [ "DuckDuckGo" ];
+          engines = {
+            "DuckDuckGo" = {
+              urls = [{
+                template = "https://duckduckgo.com";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+            };
+            "Bing".metaData.hidden = true;
+            "Google".metaData.hidden = true;
+            "Wikipedia (en)".metaData.hidden = true;
+          };
+        };
       };
     };
   };
