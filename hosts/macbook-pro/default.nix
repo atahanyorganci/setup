@@ -1,4 +1,4 @@
-inputs@{ pkgs, user, ... }:
+{ pkgs, user, inputs, ... }:
 let
   # User ID created by MacOS for the user use `id -u` to get it.
   uid = 501;
@@ -25,12 +25,10 @@ in
       Weekday = 0;
     }
   ];
-  # 
-  nixpkgs = {
-    overlays = with nixpkgs; [
-      darwin-firefox.overlay
-    ];
-  };
+  # Add custom overlay for Firefox on MacOS.
+  nixpkgs.overlays = [
+    inputs.darwin-firefox.overlay
+  ];
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
