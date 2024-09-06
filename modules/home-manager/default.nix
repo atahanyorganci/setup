@@ -9,6 +9,7 @@ inputs: {
   imports = [
     ./alacritty
     ./ffmpeg.nix
+    ./firefox.nix
     ./git
     ./gum.nix
     ./kitty.nix

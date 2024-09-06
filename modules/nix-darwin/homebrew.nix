@@ -14,7 +14,6 @@ in
 {
   options.homebrew = {
     apps = {
-      firefox = mkCaskOption "Firefox" true;
       google-chrome = mkCaskOption "Google Chrome" true;
       orbstack = mkCaskOption "Orbstack" true;
       raycast = mkCaskOption "Raycast" true;
