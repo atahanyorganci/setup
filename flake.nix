@@ -29,6 +29,9 @@
         shell = "fish";
         key = "F3F2B2EDB7562F09";
       };
+      specialArgs = {
+        inherit user inputs;
+      };
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
     in
     {
@@ -47,14 +50,10 @@
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
             home-manager.users.${user.username} = ./hosts/macbook-pro/home.nix;
-            home-manager.extraSpecialArgs = {
-              inherit user;
-            };
+            home-manager.extraSpecialArgs = specialArgs;
           }
         ];
-        specialArgs = {
-          inherit user inputs;
-        };
+        specialArgs = specialArgs;
       };
       nixosConfigurations.orb = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
@@ -66,14 +65,10 @@
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
             home-manager.users.${user.username} = ./hosts/orb/home.nix;
-            home-manager.extraSpecialArgs = {
-              inherit user inputs;
-            };
+            home-manager.extraSpecialArgs = specialArgs;
           }
         ];
-        specialArgs = {
-          inherit user inputs;
-        };
+        specialArgs = specialArgs;
       };
       homeConfigurations.${user.username} = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
