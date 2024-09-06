@@ -14,7 +14,10 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    darwin-firefox.url = "github:bandithedoge/nixpkgs-firefox-darwin";
+    darwin-firefox = {
+      url = "github:atahanyorganci/nixpkgs-firefox-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ systems
