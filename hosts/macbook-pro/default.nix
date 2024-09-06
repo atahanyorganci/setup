@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    ../../modules/nix-darwin/firefox.nix
     ../../modules/nix-darwin/homebrew.nix
     ../../modules/nix-darwin/shell.nix
   ];
