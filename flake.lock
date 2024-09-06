@@ -38,6 +38,44 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1725595401,
+        "narHash": "sha256-1oX4M57VDMYfrY1YdKg+QH1n1qJuMVa+cfQ2hiFk7pA=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "4b1b073837d8ba654680ded26200bbc9aaafeaaa",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1629284811,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c5d161cc0af116a2e17f54316f0bf43f0819785c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -60,11 +98,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1639237670,
-        "narHash": "sha256-RTdL4rEQcgaZGpvtDgkp3oK/V+1LM3I53n0ACPSroAQ=",
+        "lastModified": 1725638002,
+        "narHash": "sha256-XA/qBjBGNC3FrbyXF3w528GnOhSVmr/uHHWYkqjUZ2w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "edfb969386ebe6c3cf8f878775a7975cd88f926d",
+        "rev": "88dbefd1f2b93561ac398b0b6c38971ca0378a51",
         "type": "github"
       },
       "original": {
@@ -94,6 +132,7 @@
       "inputs": {
         "darwin": "darwin",
         "darwin-firefox": "darwin-firefox",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "systems": "systems"

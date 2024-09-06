@@ -1,4 +1,4 @@
-{ pkgs, lib, config, user, ... }: {
+{ pkgs, lib, config, user, inputs, ... }: {
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
     # This is patch for Firefox to allow downgrading to profiles.ini.
@@ -40,6 +40,7 @@
           "doh-rollout.disable-heuristics" = true;
           "dom.security.https_only_mode_ever_enabled" = true;
           "dom.security.https_only_mode" = true;
+          "extensions.autoDisableScopes" = 0;
           "identity.fxaccounts.telemetry.clientAssociationPing.enabled" = false;
           "network.trr.mode" = 3;
           "network.trr.uri" = "https://mozilla.cloudflare-dns.com/dns-query";
@@ -80,6 +81,13 @@
             "Wikipedia (en)".metaData.hidden = true;
           };
         };
+        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+          bitwarden
+          ublock-origin
+          sponsorblock
+          facebook-container
+          metamask
+        ];
       };
     };
   };
