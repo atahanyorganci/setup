@@ -37,15 +37,11 @@
     {
       formatter = eachSystem (pkgs: pkgs.nixpkgs-fmt);
       darwinConfigurations."Atahan-MacBook-Pro" = darwin.lib.darwinSystem {
-        # CPU architecture for the system.
         system = "aarch64-darwin";
         modules = [
           ./hosts/macbook-pro
           home-manager.darwinModules.home-manager
           {
-            nixpkgs.overlays = with nixpkgs; [
-              darwin-firefox.overlay
-            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;

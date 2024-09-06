@@ -25,6 +25,12 @@ in
       Weekday = 0;
     }
   ];
+  # 
+  nixpkgs = {
+    overlays = with nixpkgs; [
+      darwin-firefox.overlay
+    ];
+  };
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
