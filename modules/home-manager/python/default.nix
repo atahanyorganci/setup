@@ -30,6 +30,7 @@ let
         numpy
         pandas
         fire
+        requests
       ]
     ))
   ];
