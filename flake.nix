@@ -10,11 +10,13 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin-firefox.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
   outputs =
     inputs@{ systems
     , self
     , darwin
+    , darwin-firefox
     , nixpkgs
     , home-manager
     , ...
@@ -38,6 +40,9 @@
           ./hosts/macbook-pro
           home-manager.darwinModules.home-manager
           {
+            nixpkgs.overlays = with nixpkgs; [
+              darwin-firefox.overlay
+            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
