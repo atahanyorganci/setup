@@ -26,9 +26,14 @@ in
     }
   ];
   # Add custom overlay for Firefox on MacOS.
-  nixpkgs.overlays = [
-    inputs.darwin-firefox.overlay
-  ];
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      inputs.darwin-firefox.overlay
+    ];
+  };
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
