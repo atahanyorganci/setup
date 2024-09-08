@@ -1,4 +1,5 @@
-{ pkgs, lib, config, user, inputs, ... }: {
+{ pkgs, lib, config, user, inputs, ... }:
+{
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
     # This is patch for Firefox to allow downgrading to profiles.ini.
@@ -14,7 +15,16 @@
     };
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-bin;
+      policies = {
+        AppAutoUpdate = false;
+        DisableAppUpdate = true;
+        DisableFeedbackCommands = true;
+        DisableFirefoxAccounts = true;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
+        OfferToSaveLogins = false;
+      };
       profiles.${user.username} = {
         name = user.name;
         isDefault = true;
