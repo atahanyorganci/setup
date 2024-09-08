@@ -1,6 +1,7 @@
-{ pkgs, user, ... }:
+{ pkgs, user, inputs, ... }:
 {
   imports = [
+    inputs.darwin-firefox.darwinModules.home-manager
     ../../modules/home-manager
   ];
   alacritty.enable = true;

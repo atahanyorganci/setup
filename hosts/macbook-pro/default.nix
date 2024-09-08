@@ -30,9 +30,6 @@ in
     config = {
       allowUnfree = true;
     };
-    overlays = [
-      inputs.darwin-firefox.overlay
-    ];
   };
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
