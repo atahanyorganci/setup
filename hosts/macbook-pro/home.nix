@@ -4,6 +4,14 @@
     inputs.darwin-firefox.darwinModules.home-manager
     ../../modules/home-manager
   ];
+  home.packages = with inputs.nix-casks.packages.${pkgs.system}; [
+    orbstack
+    raycast
+    slack
+    visual-studio-code
+    whatsapp
+    vlc
+  ];
   alacritty.enable = true;
   ffmpeg.enable = true;
   firefox.enable = true;

@@ -30,6 +30,13 @@ in
       allowUnfree = true;
     };
   };
+  homebrew.apps = {
+    orbstack = false;
+    raycast = false;
+    slack = false;
+    visual-studio-code = false;
+    whatsapp = false;
+  };
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
