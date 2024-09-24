@@ -1,28 +1,10 @@
 { lib, config, ... }:
 {
-  options.kitty = {
-    enable = lib.mkEnableOption "Enable Kitty terminal emulator.";
-    theme = lib.mkOption {
-      type = lib.types.str;
-      default = "Dracula";
-      description = "Theme for the terminal emulator.";
-    };
-    font = {
-      size = lib.mkOption {
-        type = lib.types.int;
-        default = 12;
-        description = "Font size for the terminal emulator.";
-      };
-      name = lib.mkOption {
-        type = lib.types.str;
-        description = "Font name for the terminal emulator.";
-      };
-    };
-  };
+  options.kitty.enable = lib.mkEnableOption "Kitty terminal emulator";
   config.programs.kitty = lib.mkIf config.kitty.enable {
     enable = config.kitty.enable;
     font = {
-      size = config.kitty.font.size;
+      size = 12;
     };
     settings = {
       confirm_os_window_close = 0;

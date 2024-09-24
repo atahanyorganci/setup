@@ -18,10 +18,7 @@
     };
   };
   gum.enable = true;
-  kitty = {
-    enable = true;
-    font.name = "Cascadia Code NF";
-  };
+  kitty.enable = true;
   node.enable = true;
   python.enable = true;
   shell = {
