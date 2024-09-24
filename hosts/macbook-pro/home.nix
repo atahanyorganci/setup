@@ -10,6 +10,7 @@
     slack
     visual-studio-code
     whatsapp
+    brave-browser
     vlc
   ];
   alacritty.enable = true;
