@@ -18,6 +18,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ systems
@@ -25,6 +30,7 @@
     , darwin
     , darwin-firefox
     , home-manager
+    , stylix
     , ...
     }:
     let
@@ -47,6 +53,7 @@
         modules = [
           ./hosts/macbook-pro
           home-manager.darwinModules.home-manager
+          stylix.darwinModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -77,6 +84,7 @@
           system = "x86_64-linux";
         };
         modules = [
+          stylix.homeManagerModules.stylix
           ./hosts/yoga/home.nix
         ];
         extraSpecialArgs = {
