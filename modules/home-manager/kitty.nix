@@ -23,9 +23,7 @@
     enable = config.kitty.enable;
     font = {
       size = config.kitty.font.size;
-      name = config.kitty.font.name;
     };
-    theme = config.kitty.theme;
     settings = {
       confirm_os_window_close = 0;
       remember_window_size = false;

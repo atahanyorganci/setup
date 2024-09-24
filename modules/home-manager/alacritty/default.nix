@@ -23,10 +23,6 @@ in
         };
         font = {
           size = 12;
-          bold.family = "Cascadia Code NF";
-          bold_italic.family = "Cascadia Code NF";
-          italic.family = "Cascadia Code NF";
-          normal.family = "Cascadia Code NF";
         };
         window = {
           decorations = "Full";
@@ -43,7 +39,7 @@ in
             y = 32;
           };
         };
-      } // dracula;
+      };
     };
   };
 }
