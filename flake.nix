@@ -70,14 +70,6 @@
         system = "aarch64-linux";
         modules = [
           ./hosts/orb
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.verbose = true;
-            home-manager.users.${user.username} = ./hosts/orb/home.nix;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
         ];
         specialArgs = specialArgs;
       };
