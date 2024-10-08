@@ -97,6 +97,7 @@
           sponsorblock
           facebook-container
           metamask
+          react-devtools
         ];
       };
     };
