@@ -5,8 +5,6 @@
     ../../modules/shared/stylix.nix
     ../../modules/nixos
   ];
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,9 +41,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  # Enable flakes and nix commands
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Default user
   users.users.${user.username} = {
     isNormalUser = true;
     description = user.name;
