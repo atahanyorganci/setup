@@ -89,7 +89,6 @@
     description = user.name;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      vscode
       bitwarden-desktop
     ];
   };

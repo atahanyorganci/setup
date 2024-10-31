@@ -26,5 +26,6 @@
     fish.enable = true;
   };
   tools.enable = true;
+  vscode.enable = true;
   wget.enable = true;
 }

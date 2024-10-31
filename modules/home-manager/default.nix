@@ -18,6 +18,7 @@ inputs: {
     ./python
     ./shell.nix
     ./tools.nix
+    ./vscode.nix
     ./wget.nix
   ];
 }
