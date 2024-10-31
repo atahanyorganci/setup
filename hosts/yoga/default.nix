@@ -109,8 +109,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  fonts.packages = [ pkgs.cascadia-code ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
