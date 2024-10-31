@@ -17,6 +17,7 @@
       inherit (user) name email key;
     };
   };
+  gnome.enable = true;
   gum.enable = true;
   node.enable = true;
   python.enable = true;

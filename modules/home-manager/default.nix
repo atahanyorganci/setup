@@ -11,6 +11,7 @@ inputs: {
     ./ffmpeg.nix
     ./firefox.nix
     ./git
+    ./gnome.nix
     ./gum.nix
     ./kitty.nix
     ./node.nix

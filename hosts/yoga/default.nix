@@ -30,15 +30,6 @@
     LC_TELEPHONE = "tr_TR.UTF-8";
     LC_TIME = "tr_TR.UTF-8";
   };
-  # Gnome Desktop
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "tr";
-    variant = "";
-  };
   # Configure console keymap
   console.keyMap = "trq";
   # Enable CUPS to print documents.
@@ -68,22 +59,11 @@
     enable = true;
     enableSSHSupport = true;
   };
-  # Remove Gnome applications
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    gnome-calendar
-    gnome-weather
-    gnome-contacts
-    gnome-maps
-    gedit
-    gnome-music
-    epiphany
-    geary
-    gnome-characters
-    totem
-    yelp
-  ]);
   # Enable Podman contanierization
   podman.enable = true;
+  # Enable Gnome DE
+  gnome = {
+    enable = true;
+    layout = "tr";
+  };
 }
