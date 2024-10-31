@@ -5,7 +5,6 @@
 , ...
 }:
 let
-  dracula = builtins.fromTOML (builtins.readFile ./themes/dracula.toml);
   shell = pkgs.${user.shell};
   shellBin = "${shell}/bin/${user.shell}";
 in
@@ -17,7 +16,7 @@ in
     programs.alacritty = {
       enable = true;
       settings = {
-        shell = {
+        terminal.shell = {
           args = [ "-l" ];
           program = shellBin;
         };
