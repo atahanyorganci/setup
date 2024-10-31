@@ -7,7 +7,7 @@ inputs: {
   xdg.enable = true;
   # Individual imports
   imports = [
-    ./alacritty
+    ./alacritty.nix
     ./ffmpeg.nix
     ./firefox.nix
     ./git
