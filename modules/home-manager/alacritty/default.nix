@@ -11,7 +11,7 @@ let
 in
 {
   options.alacritty = {
-    enable = lib.mkEnableOption "Enable Kitty terminal emulator.";
+    enable = lib.mkEnableOption "Alacritty Terminal";
   };
   config = lib.mkIf config.alacritty.enable {
     programs.alacritty = {
