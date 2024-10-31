@@ -79,17 +79,21 @@
         ];
         specialArgs = specialArgs;
       };
-      homeConfigurations.${user.username} = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-        };
+      nixosConfigurations.yoga = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
-          stylix.homeManagerModules.stylix
-          ./hosts/yoga/home.nix
+          ./hosts/yoga
+          home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.verbose = true;
+            home-manager.users.${user.username} = ./hosts/yoga/home.nix;
+            home-manager.extraSpecialArgs = { inherit user inputs; };
+          }
         ];
-        extraSpecialArgs = {
-          inherit user;
-        };
+        specialArgs = specialArgs;
       };
     };
 }
