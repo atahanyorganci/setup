@@ -9,7 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-    ../../modules/shared/stylix.nix
+      ../../modules/shared/stylix.nix
     ];
 
   # Bootloader.
@@ -116,6 +116,21 @@
   };
 
   fonts.packages = [ pkgs.cascadia-code ];
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gnome-calendar
+    gnome-weather
+    gnome-contacts
+    gnome-maps
+    gedit
+    gnome-music
+    epiphany
+    geary
+    gnome-characters
+    totem
+    yelp
+  ]);
 
   # List services that you want to enable:
 
