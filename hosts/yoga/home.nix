@@ -9,6 +9,7 @@
   };
   alacritty.enable = true;
   ffmpeg.enable = true;
+  firefox.enable = true;
   git = {
     enable = true;
     aliases.enable = true;
