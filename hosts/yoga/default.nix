@@ -84,5 +84,6 @@
     totem
     yelp
   ]);
-  system.stateVersion = "24.05";
+  # Enable Podman contanierization
+  podman.enable = true;
 }
