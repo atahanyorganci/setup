@@ -12,6 +12,7 @@
     whatsapp
     brave-browser
     vlc
+    tableplus
   ];
   alacritty.enable = true;
   ffmpeg.enable = true;
