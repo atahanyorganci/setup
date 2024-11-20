@@ -86,26 +86,6 @@
         "type": "github"
       }
     },
-    "darwin-firefox": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1730249237,
-        "narHash": "sha256-e8RS5x0s1nWBvBpApEZmVO1JBAzEnlbP5zPwcygTU1c=",
-        "owner": "atahanyorganci",
-        "repo": "nixpkgs-firefox-darwin",
-        "rev": "912908ce0671eeb30031522ff6fcc34176bdc141",
-        "type": "github"
-      },
-      "original": {
-        "owner": "atahanyorganci",
-        "repo": "nixpkgs-firefox-darwin",
-        "type": "github"
-      }
-    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -127,6 +107,26 @@
         "owner": "rycee",
         "repo": "nur-expressions",
         "type": "gitlab"
+      }
+    },
+    "firefox-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732131217,
+        "narHash": "sha256-w2wUBJ3BCiLVS9+QW5R87YK/dq1BU7DgpckhMkebcxI=",
+        "owner": "atahanyorganci",
+        "repo": "firefox-nix-darwin",
+        "rev": "4bbdbf5bac82ea3b58242cc369243c98e82dac17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "atahanyorganci",
+        "repo": "firefox-nix-darwin",
+        "type": "github"
       }
     },
     "flake-compat": {
@@ -273,8 +273,8 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
-        "darwin-firefox": "darwin-firefox",
         "firefox-addons": "firefox-addons",
+        "firefox-darwin": "firefox-darwin",
         "home-manager": "home-manager",
         "nix-casks": "nix-casks",
         "nixpkgs": "nixpkgs",
