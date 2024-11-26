@@ -13,6 +13,7 @@
     brave-browser
     vlc
     tableplus
+    responsively
   ];
   alacritty.enable = true;
   ffmpeg.enable = true;
