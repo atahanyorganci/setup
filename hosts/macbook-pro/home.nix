@@ -27,7 +27,6 @@
   };
   gum.enable = true;
   kitty.enable = true;
-  node.enable = true;
   python.enable = true;
   shell = {
     bash.enable = true;
