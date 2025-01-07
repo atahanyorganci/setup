@@ -1,5 +1,5 @@
 inputs: {
-  # Compability with NixOS
+  # Compatibility with NixOS
   home.stateVersion = "24.05";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -12,6 +12,7 @@ inputs: {
     ./firefox.nix
     ./git
     ./gnome.nix
+    ./gpg-ssh.nix
     ./gum.nix
     ./kitty.nix
     ./node.nix
