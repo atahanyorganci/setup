@@ -1,6 +1,7 @@
-update:
-    # Fail if there are uncommitted changes
-    git diff --exit-code
-    nix flake update
+is-clean:
+    @git diff --exit-code --quiet || (echo "Uncommitted changes in repository" && exit 1)
+
+update *args: is-clean
+    nix flake update {{args}}
     git add flake.lock
     git commit -m "chore: update flake.lock"
