@@ -12,8 +12,8 @@ in
   ];
   # Disable `nix-darwin` documentation
   documentation.enable = false;
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # Allow `nix-darwin` to manage `nix`
+  nix.enable = true;
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
   # Run garbage collection automatically every Sunday at 2am.
