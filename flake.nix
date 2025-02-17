@@ -25,7 +25,6 @@
     };
     nix-casks = {
       url = "github:atahanyorganci/nix-casks/archive";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
