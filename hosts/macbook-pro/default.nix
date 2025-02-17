@@ -24,12 +24,6 @@ in
       Weekday = 0;
     }
   ];
-  # Add custom overlay for Firefox on MacOS.
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
   homebrew.apps = {
     orbstack = false;
     raycast = false;
