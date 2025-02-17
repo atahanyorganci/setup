@@ -1,7 +1,7 @@
 inputs: {
   # Enable flakes and nix commands
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # Compability with NixOS
+  # Compatibility with NixOS
   system.stateVersion = "24.05";
   # Individual imports
   imports = [
