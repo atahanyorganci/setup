@@ -8,7 +8,6 @@
     orbstack
     raycast
     slack
-    visual-studio-code
     whatsapp
     brave-browser
     vlc
@@ -34,5 +33,6 @@
     fish.enable = true;
   };
   tools.enable = true;
+  vscode.enable = true;
   wget.enable = true;
 }
