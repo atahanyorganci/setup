@@ -11,7 +11,7 @@ let
     else pkgs.vscode;
 in
 {
-  options.vscode.enable = lib.mkEnableOption "Visiual Studio Code";
+  options.vscode.enable = lib.mkEnableOption "Visual Studio Code";
   config = lib.mkIf config.vscode.enable {
     programs.vscode = {
       package = pkg;
