@@ -38,8 +38,9 @@ in
   };
   config = lib.mkIf enable {
     home.shellAliases = shellAliases;
-    home.sessionVariables = {
-      GITHUB_HOME = "${config.xdg.userDirs.documents}/GitHub";
+    home.sessionVariables = rec {
+      DEV_HOME = "${config.home.homeDirectory}/Developer";
+      GITHUB_HOME = "${DEV_HOME}/GitHub";
     };
     programs.bash = lib.mkIf cfg.bash.enable {
       enable = true;
