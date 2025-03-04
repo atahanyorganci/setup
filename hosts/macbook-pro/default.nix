@@ -24,13 +24,12 @@ in
       Weekday = 0;
     }
   ];
-  homebrew.apps = {
-    orbstack = false;
-    raycast = false;
-    slack = false;
-    visual-studio-code = false;
-    whatsapp = false;
-  };
+  # Applications installed by Homebrew
+  homebrew.casks = [
+    "google-chrome"
+    "spotify"
+    "orbstack"
+  ];
   # Enable entering sudo mode with Touch ID.
   security.pam.enableSudoTouchIdAuth = true;
   # Set Git commit hash for darwin-version.
