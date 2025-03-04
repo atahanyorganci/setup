@@ -5,7 +5,6 @@
     ../../modules/home-manager
   ];
   home.packages = with inputs.nix-casks.packages.${pkgs.system}; [
-    orbstack
     raycast
     slack
     whatsapp
