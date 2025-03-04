@@ -13,6 +13,9 @@ in
 {
   options.vscode.enable = lib.mkEnableOption "Visual Studio Code";
   config = lib.mkIf config.vscode.enable {
+    home.sessionVariables = {
+      EDITOR = "code --wait";
+    };
     programs.vscode = {
       package = pkg;
       enable = true;
