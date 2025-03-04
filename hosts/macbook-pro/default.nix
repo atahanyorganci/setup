@@ -13,17 +13,7 @@ in
   # Disable `nix-darwin` documentation
   documentation.enable = false;
   # Allow `nix-darwin` to manage `nix`
-  nix.enable = true;
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
-  # Run garbage collection automatically every Sunday at 2am.
-  nix.gc.automatic = true;
-  nix.gc.interval = [
-    {
-      Hour = 2;
-      Weekday = 0;
-    }
-  ];
+  nix.enable = false;
   # Applications installed by Homebrew
   homebrew.casks = [
     "google-chrome"
