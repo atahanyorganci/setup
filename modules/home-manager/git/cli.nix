@@ -23,10 +23,8 @@ in
     };
   };
   config = lib.mkIf config.git.enable {
-    home.packages = [ pkgs.git pkgs.gh ];
     programs.git = {
       enable = true;
-      package = pkgs.git;
       userName = config.git.user.name;
       userEmail = config.git.user.email;
       signing = {
@@ -49,7 +47,6 @@ in
     };
     programs.gh = {
       enable = true;
-      package = pkgs.gh;
       gitCredentialHelper.enable = true;
     };
   };
