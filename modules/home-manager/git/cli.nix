@@ -43,6 +43,7 @@ in
         init.defaultBranch = "main";
         merge.conflictStyle = "diff3";
         core.editor = "code --wait";
+        push.autoSetupRemote = true;
       };
     };
     programs.gh = {
