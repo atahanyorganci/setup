@@ -40,10 +40,32 @@ in
       };
       extraConfig = {
         advice.addEmptyPathspec = false;
+        branch.sort = "-committerdate";
+        tag.sort = "version:refname";
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+        };
+        push = {
+          followTags = true;
+          autoSetupRemote = true;
+        };
+        fetch = {
+          prune = true;
+          pruneTags = true;
+        };
         init.defaultBranch = "main";
-        merge.conflictStyle = "diff3";
+        merge.conflictStyle = "zdiff3";
         core.editor = "code --wait";
-        push.autoSetupRemote = true;
+        help.autocorrect = "prompt";
+        rebase = {
+          autoStash = true;
+          autoSquash = true;
+          updateRefs = true;
+        };
+        pull.rebase = true;
       };
     };
     programs.gh = {
