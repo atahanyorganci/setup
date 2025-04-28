@@ -15,7 +15,7 @@
   };
   # Time Zone
   time.timeZone = "Europe/Istanbul";
-  # Internationzaliztion
+  # Internationalization
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "tr_TR.UTF-8";
@@ -55,7 +55,7 @@
     enable = true;
     enableSSHSupport = true;
   };
-  # Enable Podman contanierization
+  # Enable Podman containerization
   podman.enable = true;
   # Enable Gnome DE
   gnome = {
