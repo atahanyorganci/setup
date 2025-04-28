@@ -20,5 +20,6 @@
     fish.enable = true;
   };
   tools.enable = true;
+  uutils.enable = true;
   wget.enable = true;
 }
