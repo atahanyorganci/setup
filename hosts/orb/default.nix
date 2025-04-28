@@ -37,6 +37,11 @@
     };
   };
   programs.${user.shell}.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-tty;
+    enableSSHSupport = true;
+  };
   # Enable Home Manager for the user
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
