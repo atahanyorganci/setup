@@ -8,5 +8,8 @@ inputs: {
     ./gnome
     ./jellyfin
     ./podman
+    ./prowlarr
+    ./radarr
+    ./sonarr
   ];
 }

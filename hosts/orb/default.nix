@@ -51,4 +51,8 @@
   system.stateVersion = "24.05";
   # Enable Jellyfin media server
   jellyfin.enable = true;
+  # Arr Stack
+  prowlarr.enable = true;
+  radarr.enable = true;
+  sonarr.enable = true;
 }
