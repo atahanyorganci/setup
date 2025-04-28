@@ -49,4 +49,6 @@
   time.timeZone = "Europe/Istanbul";
   # NixOS version
   system.stateVersion = "24.05";
+  # Enable Jellyfin media server
+  jellyfin.enable = true;
 }
