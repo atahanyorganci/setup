@@ -11,15 +11,6 @@
     "${modulesPath}/virtualisation/lxc-container.nix"
     # Include the OrbStack-specific configuration.
     ./orbstack.nix
-    inputs.home-manager.nixosModules.home-manager
-    inputs.stylix.nixosModules.stylix
-    {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.verbose = true;
-      home-manager.users.${user.username} = ./home.nix;
-      home-manager.extraSpecialArgs = { inherit user inputs; };
-    }
   ];
   users = {
     # This being `true` leads to a few nasty bugs, change at your own risk!

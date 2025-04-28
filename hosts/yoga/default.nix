@@ -2,8 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/shared/stylix.nix
-    ../../modules/nixos
   ];
   # Bootloader
   boot.loader.systemd-boot.enable = true;

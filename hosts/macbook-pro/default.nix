@@ -4,12 +4,6 @@ let
   uid = 501;
 in
 {
-  imports = [
-    ../../modules/nix-darwin/firefox.nix
-    ../../modules/nix-darwin/homebrew.nix
-    ../../modules/nix-darwin/shell.nix
-    ../../modules/shared/stylix.nix
-  ];
   # Disable `nix-darwin` documentation
   documentation.enable = false;
   # Allow `nix-darwin` to manage `nix`

@@ -7,21 +7,21 @@ inputs: {
   xdg.enable = true;
   # Individual imports
   imports = [
-    ./alacritty.nix
-    ./ffmpeg.nix
-    ./firefox.nix
+    ./alacritty
+    ./ffmpeg
+    ./firefox
     ./git
-    ./gnome.nix
-    ./gpg-ssh.nix
-    ./gum.nix
-    ./kitty.nix
-    ./node.nix
-    ./pass.nix
+    ./gnome
+    ./gpg
+    ./gum
+    ./kitty
+    ./node
+    ./pass
     ./python
-    ./shell.nix
-    ./tools.nix
-    ./uutils.nix
-    ./vscode.nix
-    ./wget.nix
+    ./shell
+    ./tools
+    ./uutils
+    ./vscode
+    ./wget
   ];
 }

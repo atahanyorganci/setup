@@ -63,6 +63,8 @@
             home-manager.users.${user.username} = ./hosts/macbook-pro/home.nix;
             home-manager.extraSpecialArgs = specialArgs;
           }
+          ./modules/nix-darwin
+          ./modules/shared
         ];
         specialArgs = specialArgs;
       };
@@ -70,6 +72,16 @@
         system = "aarch64-linux";
         modules = [
           ./hosts/orb
+          home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.verbose = true;
+            home-manager.users.${user.username} = ./hosts/orb/home.nix;
+            home-manager.extraSpecialArgs = { inherit user inputs; };
+          }
+          ./modules/nixos
         ];
         specialArgs = specialArgs;
       };
@@ -86,6 +98,8 @@
             home-manager.users.${user.username} = ./hosts/yoga/home.nix;
             home-manager.extraSpecialArgs = { inherit user inputs; };
           }
+          ./modules/nixos
+          ./modules/shared
         ];
         specialArgs = specialArgs;
       };
