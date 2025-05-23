@@ -18,13 +18,21 @@
       enable = true;
       policies = {
         AppAutoUpdate = false;
+        AutofillAddressEnabled = false;
+        AutofillCreditCardEnabled = false;
         DisableAppUpdate = true;
         DisableFeedbackCommands = true;
         DisableFirefoxAccounts = true;
+        DisableFirefoxScreenshots =true;
         DisableFirefoxStudies = true;
         DisablePocket = true;
+        DisableProfileImport = true;
         DisableTelemetry = true;
+        EnableTrackingProtection = true;
+        ExtensionUpdate = false;
         OfferToSaveLogins = false;
+        PasswordManagerEnabled = false;
+        PrimaryPassword = false;
       };
       profiles.${user.username} = {
         name = user.name;
