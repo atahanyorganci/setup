@@ -2,6 +2,7 @@
 {
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
+    stylix.targets.firefox.profileNames = [user.username];
     # This is patch for Firefox to allow downgrading to profiles.ini.
     #
     # Usefull links
@@ -74,11 +75,11 @@
         };
         search = {
           force = true;
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
-          order = [ "DuckDuckGo" ];
+          default = "ddg";
+          privateDefault = "ddg";
+          order = [ "ddg" ];
           engines = {
-            "DuckDuckGo" = {
+            "ddg" = {
               urls = [{
                 template = "https://duckduckgo.com";
                 params = [
@@ -86,12 +87,12 @@
                 ];
               }];
             };
-            "Bing".metaData.hidden = true;
-            "Google".metaData.hidden = true;
-            "Wikipedia (en)".metaData.hidden = true;
+            "bing".metaData.hidden = true;
+            "google".metaData.hidden = true;
+            "wikipedia".metaData.hidden = true;
           };
         };
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           bitwarden
           ublock-origin
           sponsorblock
