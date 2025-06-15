@@ -12,6 +12,7 @@
     vlc
     tableplus
     responsively
+    cursor
   ];
   alacritty.enable = true;
   ffmpeg.enable = true;
