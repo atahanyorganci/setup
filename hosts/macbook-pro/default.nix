@@ -20,6 +20,8 @@ in
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   # Ensures compatibility with defaults from NixOS
   system.stateVersion = 4;
+  # User used for options that previously applied to the user running `darwin-rebuild`
+  system.primaryUser = user.username;
   # Users managed by Nix
   users.knownUsers = [ user.username ];
   users.users.${user.username} = {
