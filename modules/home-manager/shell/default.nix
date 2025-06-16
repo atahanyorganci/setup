@@ -13,6 +13,8 @@ let
     ll = "${pkgs.eza}/bin/eza --long --header --icons";
     # `tree` - list files in a tree format with `eza`
     tree = "${pkgs.eza}/bin/eza --tree --long --header --icons";
+    # `nd` - activate a development shell with default shell
+    nd = "nix develop --command ${user.shell}";
   };
   enable = cfg.fish.enable || cfg.zsh.enable || cfg.bash.enable;
   initExtra = ''
