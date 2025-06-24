@@ -71,24 +71,6 @@ in
           };
         }
         {
-          name = "gitnow";
-          src = pkgs.fetchFromGitHub {
-            owner = "joseluisq";
-            repo = "gitnow";
-            rev = "2.12.0";
-            sha256 = "sha256-PuorwmaZAeG6aNWX4sUTBIE+NMdn1iWeea3rJ2RhqRQ=";
-          };
-        }
-        {
-          name = "sponge";
-          src = pkgs.fetchFromGitHub {
-            owner = "meaningful-ooo";
-            repo = "sponge";
-            rev = "1.1.0";
-            sha256 = "sha256-MdcZUDRtNJdiyo2l9o5ma7nAX84xEJbGFhAVhK+Zm1w=";
-          };
-        }
-        {
           name = "${user.username}-config";
           src = ../../../plugins/config;
         }
