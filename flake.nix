@@ -43,6 +43,11 @@
         shell = "fish";
         key = "F3F2B2EDB7562F09";
       };
+      workUser = {
+        inherit (user) name username shell;
+        email = "atahan.yorganci@synnada.ai";
+        key = "EE530DF5F568D5EB";
+      };
       specialArgs = {
         inherit user inputs;
       };
@@ -67,6 +72,31 @@
           ./modules/shared
         ];
         specialArgs = specialArgs;
+      };
+      darwinConfigurations."Atahans-Work-Macbook" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./hosts/work
+          home-manager.darwinModules.home-manager
+          stylix.darwinModules.stylix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.verbose = true;
+            home-manager.users.${user.username} = ./hosts/work/home.nix;
+            home-manager.extraSpecialArgs = {
+        inherit inputs;
+  user = workUser;
+      };
+          }
+          ./modules/nix-darwin
+          ./modules/shared
+        ];
+
+      specialArgs = {
+        inherit inputs;
+  user = workUser;
+      };
       };
       nixosConfigurations.orb = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
