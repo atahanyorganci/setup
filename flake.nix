@@ -85,18 +85,18 @@
             home-manager.verbose = true;
             home-manager.users.${user.username} = ./hosts/work/home.nix;
             home-manager.extraSpecialArgs = {
-        inherit inputs;
-  user = workUser;
-      };
+              inherit inputs;
+              user = workUser;
+            };
           }
           ./modules/nix-darwin
           ./modules/shared
         ];
 
-      specialArgs = {
-        inherit inputs;
-  user = workUser;
-      };
+        specialArgs = {
+          inherit inputs;
+          user = workUser;
+        };
       };
       nixosConfigurations.orb = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
