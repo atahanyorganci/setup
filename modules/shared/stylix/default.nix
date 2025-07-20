@@ -6,6 +6,7 @@ in
   fonts.packages = [ main ];
   stylix = {
     enable = true;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     fonts = {
       monospace = {

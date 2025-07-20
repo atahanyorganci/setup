@@ -1,8 +1,15 @@
-{ pkgs, lib, config, user, inputs, ... }:
+{ flake
+, lib
+, config
+, pkgs
+, ...
+}:
+let
+  inherit (flake) inputs;
+in
 {
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
-    stylix.targets.firefox.profileNames = [ user.username ];
     # This is patch for Firefox to allow downgrading to profiles.ini.
     #
     # Usefull links
@@ -34,8 +41,8 @@
         PasswordManagerEnabled = false;
         PrimaryPassword = false;
       };
-      profiles.${user.username} = {
-        name = user.name;
+      profiles.${config.user.username} = {
+        name = config.user.name;
         isDefault = true;
         settings = {
           "app.shield.optoutstudies.enabled" = false;
@@ -110,5 +117,6 @@
         ];
       };
     };
+    stylix.targets.firefox.profileNames = [config.user.username];
   };
 }

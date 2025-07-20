@@ -1,10 +1,11 @@
-{ lib
+{ flake
+, lib
 , config
-, inputs
 , pkgs
 , ...
 }:
 let
+  inherit (flake) inputs;
   isDarwin = lib.strings.hasSuffix "darwin" pkgs.system;
   isLinux = lib.strings.hasSuffix "linux" pkgs.system;
   caskName = "visual-studio-code";

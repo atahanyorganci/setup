@@ -1,7 +1,6 @@
 { pkgs
 , lib
 , config
-, user
 , ...
 }:
 let
@@ -14,7 +13,7 @@ let
     # `tree` - list files in a tree format with `eza`
     tree = "${pkgs.eza}/bin/eza --tree --long --header --icons";
     # `nd` - activate a development shell with default shell
-    nd = "nix develop --command ${user.shell}";
+    nd = "nix develop --command ${config.user.shell}";
   };
   enable = cfg.fish.enable || cfg.zsh.enable || cfg.bash.enable;
   initExtra = ''
@@ -71,11 +70,11 @@ in
           };
         }
         {
-          name = "${user.username}-config";
+          name = "${config.user.username}-config";
           src = ../../../plugins/config;
         }
         {
-          name = "${user.username}-tools";
+          name = "${config.user.username}-tools";
           src = ../../../plugins/tools;
         }
       ];

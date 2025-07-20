@@ -1,12 +1,14 @@
-{ lib
+{ flake
+, lib
 , config
-, user
 , pkgs
 , ...
 }:
 let
-  shell = pkgs.${user.shell};
-  shellBin = "${shell}/bin/${user.shell}";
+  inherit (flake) inputs;
+  inherit (inputs) nixpkgs;
+  shell = pkgs.${config.user.shell};
+  shellBin = "${shell}/bin/${config.user.shell}";
 in
 {
   options.alacritty = {

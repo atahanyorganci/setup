@@ -20,6 +20,7 @@ inputs: {
     ./python
     ./shell
     ./tools
+    ./user
     ./uutils
     ./vscode
     ./wget

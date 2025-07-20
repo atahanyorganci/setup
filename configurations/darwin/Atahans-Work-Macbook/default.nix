@@ -1,9 +1,39 @@
-{ pkgs, user, inputs, ... }:
+{ flake, lib, ... }:
+
 let
-  # User ID created by MacOS for the user use `id -u` to get it.
-  uid = 501;
+  inherit (flake) inputs;
+  inherit (inputs) self nixpkgs;
+  user = {
+    name = "Atahan Yorgancı";
+    email = "atahanyorganci@hotmail.com";
+    username = "atahan";
+    shell = "fish";
+    key = "F3F2B2EDB7562F09";
+  };
+  workUser = {
+    inherit (user) name username shell;
+    email = "atahan.yorganci@synnada.ai";
+    key = "EE530DF5F568D5EB";
+  };
+  system = "aarch64-darwin";
+  pkgs = import nixpkgs {
+    inherit system;
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
 in
 {
+  imports = with inputs; [
+    self.darwinModules.default
+    home-manager.darwinModules.home-manager
+    stylix.darwinModules.stylix
+    {
+      home-manager.users.${user.username} = self + /configurations/home/atahan;
+    }
+  ];
+  nixpkgs.hostPlatform = system;
   # Disable `nix-darwin` documentation
   documentation.enable = false;
   # Allow `nix-darwin` to manage `nix`
@@ -30,6 +60,7 @@ in
     description = user.name;
     home = "/Users/${user.username}";
     shell = pkgs.${user.shell};
-    uid = uid;
+    # User ID created by MacOS for the user use `id -u` to get it.
+    uid = 501;
   };
 }

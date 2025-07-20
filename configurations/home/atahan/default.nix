@@ -1,8 +1,14 @@
-{ pkgs, user, inputs, ... }:
+{ flake
+, pkgs
+, ...
+}:
+let
+  inherit (flake) inputs;
+in
 {
-  imports = [
-    inputs.firefox-darwin.darwinModules.home-manager
-    ../../modules/home-manager
+  imports = with inputs; [
+    self.homeModules.default
+    firefox-darwin.darwinModules.home-manager
   ];
   home.packages = with inputs.nix-casks.packages.${pkgs.system}; [
     raycast
@@ -10,14 +16,18 @@
     whatsapp
     orbstack
   ];
+  user = {
+    name = "Atahan Yorgancı";
+    email = "atahan.yorganci@synnada.ai";
+    username = "atahan";
+    shell = "fish";
+    key = "EE530DF5F568D5EB";
+  };
   alacritty.enable = true;
   firefox.enable = true;
   git = {
     enable = true;
     aliases.enable = true;
-    user = {
-      inherit (user) name email key;
-    };
   };
   gum.enable = true;
   python.enable = true;
