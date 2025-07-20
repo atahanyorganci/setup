@@ -12,6 +12,7 @@
       go-task
       pandoc
       qrencode
+      scc
     ];
   };
 }
