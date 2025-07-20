@@ -15,32 +15,6 @@ let
   sortedVersions = builtins.sort (a: b: (builtins.compareVersions a b) < 0) availableVersions;
   latestVersion = builtins.elemAt sortedVersions (builtins.length sortedVersions - 1);
   python = versions.${config.python.version};
-  pythonPackageTools = [
-    (python.withPackages (
-      pkgs: with pkgs; [
-        black
-        isort
-        mypy
-        pipx
-        tox
-        virtualenv
-        pip
-        ipython
-        ipykernel
-        matplotlib
-        numpy
-        pandas
-        fire
-        requests
-      ]
-    ))
-  ];
-  standaloneTools = with pkgs; [
-    ruff
-    poetry
-    pipenv
-  ];
-  pythonTools = pythonPackageTools ++ standaloneTools;
 in
 {
   options.python = {
@@ -50,21 +24,16 @@ in
       default = latestVersion;
       description = "The version of Python to install.";
     };
-    installTools = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Install Python development tools.";
-    };
   };
   config = lib.mkIf config.python.enable {
     home.sessionVariables = {
       PYTHONSTARTUP = "${config.xdg.configHome}/python/startup.py";
       PYTHONHISTFILE = "${config.xdg.cacheHome}/python/history.py";
     };
-    home.packages = if config.python.installTools then pythonTools else [ python ];
+    home.packages = [ python pkgs.uv ];
     home.file = {
       ".config/ipython/profile_default/ipython_config.py" = {
-        enable = config.python.installTools;
+        enable = true;
         source = ./ipython/profile_deafult/ipython_config.py;
       };
       ".config/python/startup.py" = {
