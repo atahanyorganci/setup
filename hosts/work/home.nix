@@ -6,8 +6,9 @@
   ];
   home.packages = with inputs.nix-casks.packages.${pkgs.system}; [
     raycast
-    cursor
     discord
+    whatsapp
+    orbstack
   ];
   alacritty.enable = true;
   firefox.enable = true;
