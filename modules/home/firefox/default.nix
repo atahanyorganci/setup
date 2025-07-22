@@ -117,6 +117,6 @@ in
         ];
       };
     };
-    stylix.targets.firefox.profileNames = [config.user.username];
+    stylix.targets.firefox.profileNames = [ config.user.username ];
   };
 }
