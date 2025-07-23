@@ -103,7 +103,6 @@
         modules = [
           ./hosts/orb
           home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
