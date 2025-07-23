@@ -2,7 +2,6 @@
 {
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
-    stylix.targets.firefox.profileNames = [ user.username ];
     # This is patch for Firefox to allow downgrading to profiles.ini.
     #
     # Usefull links
