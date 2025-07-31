@@ -10,6 +10,7 @@ inputs: {
     ./alacritty
     ./ffmpeg
     ./firefox
+    ./ghostty
     ./git
     ./gnome
     ./gpg
