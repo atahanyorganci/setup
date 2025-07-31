@@ -12,6 +12,7 @@
   ];
   alacritty.enable = true;
   firefox.enable = true;
+  ghostty.enable = true;
   git = {
     enable = true;
     aliases.enable = true;
