@@ -63,7 +63,6 @@ in
         rebase = {
           autoStash = true;
           autoSquash = true;
-          updateRefs = true;
         };
         pull.rebase = true;
       };
