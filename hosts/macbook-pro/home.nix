@@ -6,17 +6,13 @@
   ];
   home.packages = with inputs.nix-casks.packages.${pkgs.system}; [
     raycast
-    slack
     whatsapp
     brave-browser
     vlc
-    tableplus
-    responsively
-    cursor
   ];
-  alacritty.enable = true;
   ffmpeg.enable = true;
   firefox.enable = true;
+  ghostty.enable = true;
   git = {
     enable = true;
     aliases.enable = true;
@@ -25,7 +21,6 @@
     };
   };
   gum.enable = true;
-  kitty.enable = true;
   python.enable = true;
   shell = {
     bash.enable = true;
