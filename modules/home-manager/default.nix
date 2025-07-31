@@ -20,6 +20,7 @@ inputs: {
     ./pass
     ./python
     ./shell
+    ./terminal
     ./tools
     ./uutils
     ./vscode

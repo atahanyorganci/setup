@@ -21,22 +21,13 @@ in
           program = shellBin;
         };
         font = {
-          size = 12;
+          size = lib.mkForce config.terminal.font.size;
         };
         window = {
           decorations = "Full";
-          dimensions = {
-            columns = 100;
-            lines = 50;
-          };
-          padding = {
-            x = 8;
-            y = 8;
-          };
-          position = {
-            x = 32;
-            y = 32;
-          };
+          dimensions = config.terminal.dimensions;
+          padding = config.terminal.padding;
+          position = config.terminal.position;
         };
       };
     };
