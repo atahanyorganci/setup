@@ -13,6 +13,7 @@
       pandoc
       qrencode
       scc
+      nixpkgs-fmt
     ];
   };
 }
