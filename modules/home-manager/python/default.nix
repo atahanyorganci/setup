@@ -9,6 +9,7 @@ let
     "3.10" = pkgs.python310;
     "3.11" = pkgs.python311;
     "3.12" = pkgs.python312;
+    "3.13" = pkgs.python313;
   };
   availableVersions = builtins.attrNames versions;
   sortedVersions = builtins.sort (a: b: (builtins.compareVersions a b) < 0) availableVersions;
