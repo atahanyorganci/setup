@@ -25,5 +25,6 @@ in
       enable = true;
       enableUpdateCheck = true;
     };
+    stylix.targets.vscode.enable = false;
   };
 }
